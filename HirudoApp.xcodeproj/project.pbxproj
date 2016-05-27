@@ -13,6 +13,7 @@
 		31A2DCCF1CF7D9B500939063 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31A2DCCD1CF7D9B500939063 /* Main.storyboard */; };
 		31A2DCD11CF7D9B500939063 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 31A2DCD01CF7D9B500939063 /* Assets.xcassets */; };
 		31A2DCD41CF7D9B500939063 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31A2DCD21CF7D9B500939063 /* LaunchScreen.storyboard */; };
+		9F0AA1DA4F94C1D970F1C7D5 /* libPods-HirudoApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 779DE83D3C2026F5547E8BCA /* libPods-HirudoApp.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,9 @@
 		31A2DCD01CF7D9B500939063 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		31A2DCD31CF7D9B500939063 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		31A2DCD51CF7D9B500939063 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		779DE83D3C2026F5547E8BCA /* libPods-HirudoApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HirudoApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9ED7F887DF45D20E8236D417 /* Pods-HirudoApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HirudoApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-HirudoApp/Pods-HirudoApp.release.xcconfig"; sourceTree = "<group>"; };
+		B6D8254E3871DD288663D682 /* Pods-HirudoApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HirudoApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HirudoApp/Pods-HirudoApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F0AA1DA4F94C1D970F1C7D5 /* libPods-HirudoApp.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +49,8 @@
 			children = (
 				31A2DCC31CF7D9B500939063 /* HirudoApp */,
 				31A2DCC21CF7D9B500939063 /* Products */,
+				E65A8262BC0DE43BF83DF20D /* Pods */,
+				37D3E55C753C237E0F29F50B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -79,6 +86,23 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		37D3E55C753C237E0F29F50B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				779DE83D3C2026F5547E8BCA /* libPods-HirudoApp.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E65A8262BC0DE43BF83DF20D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B6D8254E3871DD288663D682 /* Pods-HirudoApp.debug.xcconfig */,
+				9ED7F887DF45D20E8236D417 /* Pods-HirudoApp.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -86,9 +110,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 31A2DCD81CF7D9B500939063 /* Build configuration list for PBXNativeTarget "HirudoApp" */;
 			buildPhases = (
+				E6BD8D846327654F35210E16 /* 📦 Check Pods Manifest.lock */,
 				31A2DCBD1CF7D9B400939063 /* Sources */,
 				31A2DCBE1CF7D9B400939063 /* Frameworks */,
 				31A2DCBF1CF7D9B400939063 /* Resources */,
+				B022F261D184A98C6FFEE00F /* 📦 Embed Pods Frameworks */,
+				CC9992DA344C53BD95B73E65 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -144,6 +171,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		B022F261D184A98C6FFEE00F /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HirudoApp/Pods-HirudoApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CC9992DA344C53BD95B73E65 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HirudoApp/Pods-HirudoApp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E6BD8D846327654F35210E16 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		31A2DCBD1CF7D9B400939063 /* Sources */ = {
@@ -262,6 +337,7 @@
 		};
 		31A2DCD91CF7D9B500939063 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B6D8254E3871DD288663D682 /* Pods-HirudoApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -276,6 +352,7 @@
 		};
 		31A2DCDA1CF7D9B500939063 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9ED7F887DF45D20E8236D417 /* Pods-HirudoApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";

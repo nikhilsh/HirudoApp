@@ -1,0 +1,94 @@
+PODS:
+  - AFNetworking (3.1.0):
+    - AFNetworking/NSURLSession (= 3.1.0)
+    - AFNetworking/Reachability (= 3.1.0)
+    - AFNetworking/Security (= 3.1.0)
+    - AFNetworking/Serialization (= 3.1.0)
+    - AFNetworking/UIKit (= 3.1.0)
+  - AFNetworking/NSURLSession (3.1.0):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (3.1.0)
+  - AFNetworking/Security (3.1.0)
+  - AFNetworking/Serialization (3.1.0)
+  - AFNetworking/UIKit (3.1.0):
+    - AFNetworking/NSURLSession
+  - ARGraphs (0.1.0)
+  - ISO8601DateFormatter (0.8)
+  - Mantle (1.4.1):
+    - Mantle/extobjc (= 1.4.1)
+  - Mantle/extobjc (1.4.1)
+  - MCAdditions (0.2.2):
+    - ISO8601DateFormatter (~> 0.7)
+    - Mantle (~> 1.4.1)
+    - MCAdditions/Categories (= 0.2.2)
+    - MCAdditions/DataSource (= 0.2.2)
+    - MCAdditions/ExtObjC (= 0.2.2)
+    - MCAdditions/Model (= 0.2.2)
+    - MCAdditions/Observers (= 0.2.2)
+    - MCAdditions/UI (= 0.2.2)
+  - MCAdditions/Categories (0.2.2):
+    - ISO8601DateFormatter (~> 0.7)
+    - Mantle (~> 1.4.1)
+  - MCAdditions/DataSource (0.2.2):
+    - ISO8601DateFormatter (~> 0.7)
+    - Mantle (~> 1.4.1)
+  - MCAdditions/ExtObjC (0.2.2):
+    - ISO8601DateFormatter (~> 0.7)
+    - Mantle (~> 1.4.1)
+  - MCAdditions/Model (0.2.2):
+    - ISO8601DateFormatter (~> 0.7)
+    - Mantle (~> 1.4.1)
+  - MCAdditions/Observers (0.2.2):
+    - ISO8601DateFormatter (~> 0.7)
+    - Mantle (~> 1.4.1)
+  - MCAdditions/UI (0.2.2):
+    - ISO8601DateFormatter (~> 0.7)
+    - Mantle (~> 1.4.1)
+  - MCAppRouter (0.1.1)
+  - MCDynamicObject (0.2):
+    - MCDynamicObject/Utilities (= 0.2)
+    - PDKeychainBindingsController (~> 0.0.1)
+    - TMCache (~> 1.2.0)
+  - MCDynamicObject/Utilities (0.2):
+    - PDKeychainBindingsController (~> 0.0.1)
+    - TMCache (~> 1.2.0)
+  - PDKeychainBindingsController (0.0.1)
+  - SDWebImage (3.7.6):
+    - SDWebImage/Core (= 3.7.6)
+  - SDWebImage/Core (3.7.6)
+  - TMCache (1.2.4)
+
+DEPENDENCIES:
+  - AFNetworking
+  - ARGraphs (~> 0.1)
+  - MCAdditions (from `https://github.com/matthewcheok/MCAdditions.git`)
+  - MCAppRouter (~> 0.1)
+  - MCDynamicObject (~> 0.2)
+  - SDWebImage (~> 3.7)
+
+EXTERNAL SOURCES:
+  MCAdditions:
+    :git: https://github.com/matthewcheok/MCAdditions.git
+
+CHECKOUT OPTIONS:
+  MCAdditions:
+    :commit: 2e2251cf2796ee5a217d6123d43b6354d854e446
+    :git: https://github.com/matthewcheok/MCAdditions.git
+
+SPEC CHECKSUMS:
+  AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
+  ARGraphs: 5ff10eb96735f64d6195130d84971dca2ae3cd6a
+  ISO8601DateFormatter: 4551b6ce4f83185425f583b0b3feb3c7b59b942c
+  Mantle: 3219c0181d918508689af61c77891b12dbb28215
+  MCAdditions: a8eba8b4be607f27f6abd668fe641eb8ac54cfe1
+  MCAppRouter: 44762ea61f9c7b3d72e1149a0dce25998eb54507
+  MCDynamicObject: 7f635cff8036c3d4855cc3b6a195a131c6d84a4a
+  PDKeychainBindingsController: fa8cb3cf99f2ea9240d61066ed0549f34e2cec3c
+  SDWebImage: c325cf02c30337336b95beff20a13df489ec0ec9
+  TMCache: a93984b045a5ee84bd8941bd5e0b54296059cc52
+
+PODFILE CHECKSUM: 051e01ed729527ba5dc10eaf646313ffff1bd9be
+
+COCOAPODS: 1.0.0
