@@ -27,6 +27,9 @@
                                         </view>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="lineGraph" destination="QKw-dp-3O3" id="dag-BO-w2r"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>

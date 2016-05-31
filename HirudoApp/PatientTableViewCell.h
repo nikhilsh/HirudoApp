@@ -8,9 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import "Patient.h"
+#import <ARLineGraph.h>
 
-@interface PatientTableViewCell : UITableViewCell
+@interface PatientTableViewCell : UITableViewCell <ARLineGraphDataSource>
 
 @property (strong, nonatomic) Patient *patient;
+@property (copy, nonatomic) NSString *title;
+@property (weak, nonatomic) IBOutlet ARLineGraph *lineGraph;
+@property (nonatomic,strong) NSMutableArray *graphDataPoints;
 
 @end

@@ -14,5 +14,6 @@
 @property (assign, nonatomic) int heartRate;
 @property (assign, nonatomic) float temperature;
 @property (assign, nonatomic) float bloodFlowRate;
+@property (strong, nonatomic) NSDate *date;
 
 @end

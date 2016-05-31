@@ -41,13 +41,20 @@ static NSString *const HealthDataViewCell = @"HealthDataViewCell";
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.patients.count;
+    return 1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     PatientTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:HealthDataViewCell forIndexPath:indexPath];
-    
     cell.patient = self.patients[indexPath.row];
+    
+    
+    if (indexPath.row == 1) {
+        cell.title = @"Temperature";
+    }
+    
+    
+    
     
     return cell;
 }
