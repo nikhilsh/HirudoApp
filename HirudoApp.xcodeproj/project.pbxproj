@@ -7,26 +7,41 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		315BFA041CFC4EA500FA87B3 /* Client.m in Sources */ = {isa = PBXBuildFile; fileRef = 315BF9FB1CFC4EA500FA87B3 /* Client.m */; };
+		315BFA061CFC4EA500FA87B3 /* MCJSONRequestSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 315BF9FF1CFC4EA500FA87B3 /* MCJSONRequestSerializer.m */; };
+		315BFA071CFC4EA500FA87B3 /* MCJSONResponseSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 315BFA011CFC4EA500FA87B3 /* MCJSONResponseSerializer.m */; };
+		315BFA081CFC4EA500FA87B3 /* MCNetworkActivityLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 315BFA031CFC4EA500FA87B3 /* MCNetworkActivityLogger.m */; };
 		31A2DCC61CF7D9B500939063 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 31A2DCC51CF7D9B500939063 /* main.m */; };
 		31A2DCC91CF7D9B500939063 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 31A2DCC81CF7D9B500939063 /* AppDelegate.m */; };
-		31A2DCCC1CF7D9B500939063 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31A2DCCB1CF7D9B500939063 /* ViewController.m */; };
-		31A2DCCF1CF7D9B500939063 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31A2DCCD1CF7D9B500939063 /* Main.storyboard */; };
 		31A2DCD11CF7D9B500939063 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 31A2DCD01CF7D9B500939063 /* Assets.xcassets */; };
 		31A2DCD41CF7D9B500939063 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31A2DCD21CF7D9B500939063 /* LaunchScreen.storyboard */; };
+		31D2DF371CFD642400C22715 /* Patient.m in Sources */ = {isa = PBXBuildFile; fileRef = 31D2DF361CFD642400C22715 /* Patient.m */; };
+		31D2DF391CFD7C2C00C22715 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31D2DF381CFD7C2C00C22715 /* Main.storyboard */; };
+		31D2DF3C1CFD7C4000C22715 /* PatientViewTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31D2DF3B1CFD7C4000C22715 /* PatientViewTableViewController.m */; };
 		9F0AA1DA4F94C1D970F1C7D5 /* libPods-HirudoApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 779DE83D3C2026F5547E8BCA /* libPods-HirudoApp.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		315BF9FA1CFC4EA500FA87B3 /* Client.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Client.h; sourceTree = "<group>"; };
+		315BF9FB1CFC4EA500FA87B3 /* Client.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Client.m; sourceTree = "<group>"; };
+		315BF9FE1CFC4EA500FA87B3 /* MCJSONRequestSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCJSONRequestSerializer.h; sourceTree = "<group>"; };
+		315BF9FF1CFC4EA500FA87B3 /* MCJSONRequestSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCJSONRequestSerializer.m; sourceTree = "<group>"; };
+		315BFA001CFC4EA500FA87B3 /* MCJSONResponseSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCJSONResponseSerializer.h; sourceTree = "<group>"; };
+		315BFA011CFC4EA500FA87B3 /* MCJSONResponseSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCJSONResponseSerializer.m; sourceTree = "<group>"; };
+		315BFA021CFC4EA500FA87B3 /* MCNetworkActivityLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCNetworkActivityLogger.h; sourceTree = "<group>"; };
+		315BFA031CFC4EA500FA87B3 /* MCNetworkActivityLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCNetworkActivityLogger.m; sourceTree = "<group>"; };
 		31A2DCC11CF7D9B500939063 /* HirudoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HirudoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		31A2DCC51CF7D9B500939063 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		31A2DCC71CF7D9B500939063 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		31A2DCC81CF7D9B500939063 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		31A2DCCA1CF7D9B500939063 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		31A2DCCB1CF7D9B500939063 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		31A2DCCE1CF7D9B500939063 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		31A2DCD01CF7D9B500939063 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		31A2DCD31CF7D9B500939063 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		31A2DCD51CF7D9B500939063 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		31D2DF351CFD642400C22715 /* Patient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Patient.h; sourceTree = "<group>"; };
+		31D2DF361CFD642400C22715 /* Patient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Patient.m; sourceTree = "<group>"; };
+		31D2DF381CFD7C2C00C22715 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		31D2DF3A1CFD7C4000C22715 /* PatientViewTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PatientViewTableViewController.h; sourceTree = "<group>"; };
+		31D2DF3B1CFD7C4000C22715 /* PatientViewTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PatientViewTableViewController.m; sourceTree = "<group>"; };
 		779DE83D3C2026F5547E8BCA /* libPods-HirudoApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HirudoApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9ED7F887DF45D20E8236D417 /* Pods-HirudoApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HirudoApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-HirudoApp/Pods-HirudoApp.release.xcconfig"; sourceTree = "<group>"; };
 		B6D8254E3871DD288663D682 /* Pods-HirudoApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HirudoApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HirudoApp/Pods-HirudoApp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -44,6 +59,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		315BFA091CFC4EB000FA87B3 /* Client */ = {
+			isa = PBXGroup;
+			children = (
+				315BF9FA1CFC4EA500FA87B3 /* Client.h */,
+				315BF9FB1CFC4EA500FA87B3 /* Client.m */,
+				315BF9FE1CFC4EA500FA87B3 /* MCJSONRequestSerializer.h */,
+				315BF9FF1CFC4EA500FA87B3 /* MCJSONRequestSerializer.m */,
+				315BFA001CFC4EA500FA87B3 /* MCJSONResponseSerializer.h */,
+				315BFA011CFC4EA500FA87B3 /* MCJSONResponseSerializer.m */,
+				315BFA021CFC4EA500FA87B3 /* MCNetworkActivityLogger.h */,
+				315BFA031CFC4EA500FA87B3 /* MCNetworkActivityLogger.m */,
+			);
+			name = Client;
+			sourceTree = "<group>";
+		};
 		31A2DCB81CF7D9B400939063 = {
 			isa = PBXGroup;
 			children = (
@@ -67,9 +97,11 @@
 			children = (
 				31A2DCC71CF7D9B500939063 /* AppDelegate.h */,
 				31A2DCC81CF7D9B500939063 /* AppDelegate.m */,
-				31A2DCCA1CF7D9B500939063 /* ViewController.h */,
-				31A2DCCB1CF7D9B500939063 /* ViewController.m */,
-				31A2DCCD1CF7D9B500939063 /* Main.storyboard */,
+				31D2DF381CFD7C2C00C22715 /* Main.storyboard */,
+				31D2DF3A1CFD7C4000C22715 /* PatientViewTableViewController.h */,
+				31D2DF3B1CFD7C4000C22715 /* PatientViewTableViewController.m */,
+				31D2DF341CFD640A00C22715 /* Model */,
+				315BFA091CFC4EB000FA87B3 /* Client */,
 				31A2DCD01CF7D9B500939063 /* Assets.xcassets */,
 				31A2DCD21CF7D9B500939063 /* LaunchScreen.storyboard */,
 				31A2DCD51CF7D9B500939063 /* Info.plist */,
@@ -84,6 +116,15 @@
 				31A2DCC51CF7D9B500939063 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		31D2DF341CFD640A00C22715 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				31D2DF351CFD642400C22715 /* Patient.h */,
+				31D2DF361CFD642400C22715 /* Patient.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 		37D3E55C753C237E0F29F50B /* Frameworks */ = {
@@ -164,9 +205,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				31D2DF391CFD7C2C00C22715 /* Main.storyboard in Resources */,
 				31A2DCD41CF7D9B500939063 /* LaunchScreen.storyboard in Resources */,
 				31A2DCD11CF7D9B500939063 /* Assets.xcassets in Resources */,
-				31A2DCCF1CF7D9B500939063 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -225,8 +266,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				31A2DCCC1CF7D9B500939063 /* ViewController.m in Sources */,
+				31D2DF371CFD642400C22715 /* Patient.m in Sources */,
+				315BFA071CFC4EA500FA87B3 /* MCJSONResponseSerializer.m in Sources */,
 				31A2DCC91CF7D9B500939063 /* AppDelegate.m in Sources */,
+				315BFA081CFC4EA500FA87B3 /* MCNetworkActivityLogger.m in Sources */,
+				31D2DF3C1CFD7C4000C22715 /* PatientViewTableViewController.m in Sources */,
+				315BFA061CFC4EA500FA87B3 /* MCJSONRequestSerializer.m in Sources */,
+				315BFA041CFC4EA500FA87B3 /* Client.m in Sources */,
 				31A2DCC61CF7D9B500939063 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -234,14 +280,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		31A2DCCD1CF7D9B500939063 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				31A2DCCE1CF7D9B500939063 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		31A2DCD21CF7D9B500939063 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
