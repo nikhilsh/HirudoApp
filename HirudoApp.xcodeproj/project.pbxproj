@@ -19,7 +19,8 @@
 		31D2DF391CFD7C2C00C22715 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31D2DF381CFD7C2C00C22715 /* Main.storyboard */; };
 		31D2DF3C1CFD7C4000C22715 /* PatientViewTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31D2DF3B1CFD7C4000C22715 /* PatientViewTableViewController.m */; };
 		31D2DF3F1CFD896900C22715 /* PatientTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 31D2DF3E1CFD896900C22715 /* PatientTableViewCell.m */; };
-		31D641FF1CFDBF10003F3B30 /* Jibber.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31D641FE1CFDBF10003F3B30 /* Jibber.framework */; };
+		31D642051CFDD49C003F3B30 /* Jibber.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31D642041CFDD49C003F3B30 /* Jibber.framework */; };
+		31D642091CFDD510003F3B30 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 31D642081CFDD510003F3B30 /* libc++.tbd */; };
 		9F0AA1DA4F94C1D970F1C7D5 /* libPods-HirudoApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 779DE83D3C2026F5547E8BCA /* libPods-HirudoApp.a */; };
 /* End PBXBuildFile section */
 
@@ -46,7 +47,9 @@
 		31D2DF3B1CFD7C4000C22715 /* PatientViewTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PatientViewTableViewController.m; sourceTree = "<group>"; };
 		31D2DF3D1CFD896900C22715 /* PatientTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PatientTableViewCell.h; sourceTree = "<group>"; };
 		31D2DF3E1CFD896900C22715 /* PatientTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PatientTableViewCell.m; sourceTree = "<group>"; };
-		31D641FE1CFDBF10003F3B30 /* Jibber.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Jibber.framework; sourceTree = "<group>"; };
+		31D642041CFDD49C003F3B30 /* Jibber.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Jibber.framework; sourceTree = "<group>"; };
+		31D642061CFDD50A003F3B30 /* libc++.1.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.1.tbd"; path = "usr/lib/libc++.1.tbd"; sourceTree = SDKROOT; };
+		31D642081CFDD510003F3B30 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		779DE83D3C2026F5547E8BCA /* libPods-HirudoApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HirudoApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9ED7F887DF45D20E8236D417 /* Pods-HirudoApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HirudoApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-HirudoApp/Pods-HirudoApp.release.xcconfig"; sourceTree = "<group>"; };
 		B6D8254E3871DD288663D682 /* Pods-HirudoApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HirudoApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HirudoApp/Pods-HirudoApp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -57,7 +60,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				31D641FF1CFDBF10003F3B30 /* Jibber.framework in Frameworks */,
+				31D642091CFDD510003F3B30 /* libc++.tbd in Frameworks */,
+				31D642051CFDD49C003F3B30 /* Jibber.framework in Frameworks */,
 				9F0AA1DA4F94C1D970F1C7D5 /* libPods-HirudoApp.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -138,7 +142,9 @@
 		37D3E55C753C237E0F29F50B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				31D641FE1CFDBF10003F3B30 /* Jibber.framework */,
+				31D642081CFDD510003F3B30 /* libc++.tbd */,
+				31D642061CFDD50A003F3B30 /* libc++.1.tbd */,
+				31D642041CFDD49C003F3B30 /* Jibber.framework */,
 				779DE83D3C2026F5547E8BCA /* libPods-HirudoApp.a */,
 			);
 			name = Frameworks;
