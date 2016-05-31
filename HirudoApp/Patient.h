@@ -13,5 +13,6 @@
 @property (copy, nonatomic) NSString *patientID;
 @property (assign, nonatomic) int heartRate;
 @property (assign, nonatomic) float temperature;
+@property (assign, nonatomic) float bloodFlowRate;
 
 @end

@@ -7,6 +7,7 @@
 //
 
 #import "AFHTTPSessionManager.h"
+#import "Patient.h"
 
 extern NSString *const ClientDidUpdateUserAccountNotification;
 
@@ -16,5 +17,7 @@ extern NSString *const ClientDidUpdateUserAccountNotification;
 @property (nonatomic, assign, readonly) BOOL signedIn;
 
 + (instancetype)sharedInstance;
+
+- (void)retrievePatients:(void (^)(NSError *error, NSArray *patients))completion;
 
 @end

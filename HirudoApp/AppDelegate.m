@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import <MCAppRouter.h>
 
 @interface AppDelegate ()
 
@@ -14,8 +15,13 @@
 
 @implementation AppDelegate
 
+- (void)setupViewControllerRoutes {
+    [[MCAppRouter sharedInstance] mapRoute:@"patient/list" toViewControllerInStoryboardWithName:@"Main" withIdentifer:@"PatientViewTableViewController"];
+}
+
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    [self setupViewControllerRoutes];
     // Override point for customization after application launch.
     return YES;
 }

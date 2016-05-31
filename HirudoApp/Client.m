@@ -8,7 +8,7 @@
 
 #import "Client.h"
 
-static NSString *const kAPIBaseUrl = @"http://tgb-dchua.pagekite.me/";
+static NSString *const kAPIBaseUrl = @"http://hirudo-dev.ap-southeast-1.elasticbeanstalk.com";
 static NSString *const kAPIVersionHeader = @"X-Api-Version";
 static NSString *const kAuthTokenHeader = @"X-Auth-Token";
 
@@ -38,4 +38,19 @@ NSString *const ClientDidUpdateUserAccountNotification = @"ClientDidUpdateUserAc
 		}
 	}
 	return self;
-}@end
+}
+
+- (void)retrievePatients:(void (^)(NSError *error, NSArray *patients))completion {
+    [self GET:@"doctor" parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSArray *patients = [Patient arrayOfModelFromJSONArray:responseObject];
+        if (completion) {
+            completion(nil, patients);
+        }
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        NSLog(@"error: %@", [error localizedDescription]);
+        completion(error, nil);
+    }];
+}
+
+
+@end

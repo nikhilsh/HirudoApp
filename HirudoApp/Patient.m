@@ -10,4 +10,18 @@
 
 @implementation Patient
 
+/*
++ (NSDictionary *)JSONKeyPathsByPropertyKey {
+return @{
+@"uuid" : @"id",
+@"fullName" : @"full_name",
+@"phoneNumber" : @"phone_number",
+@"summary" : @"description",
+@"nationalID" : @"nationality_id",
+@"isVerified" : @"is_verified",
+@"avatarURL" : @"picture.url",
+@"createdDate" : @"created_at"
+};
+*/
+
 @end
