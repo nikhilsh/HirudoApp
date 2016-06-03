@@ -41,8 +41,11 @@ NSString *const ClientDidUpdateUserAccountNotification = @"ClientDidUpdateUserAc
 }
 
 - (void)retrievePatients:(void (^)(NSError *error, NSArray *patients))completion {
-    [self GET:@"doctor/xsadaeqe2131adsdasddsad" parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        NSArray *patients = [Patient arrayOfModelFromJSONArray:responseObject];
+    NSDictionary *params = @{
+                             @"uid" : @(1)
+                             };
+    [self GET:@"doctor/data" parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSArray *patients = [Patient arrayOfModelFromJSONArray:responseObject[@"data"]];
         if (completion) {
             completion(nil, patients);
         }
