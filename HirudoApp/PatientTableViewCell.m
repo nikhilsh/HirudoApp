@@ -13,16 +13,32 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    // Initialization code
+        // self.timer = [NSTimer timerWithTimeInterval:2.0 target:self selector:@selector(createDataPoint) userInfo:nil repeats:YES];
+    //  [[NSRunLoop mainRunLoop] addTimer:self.timer forMode:NSRunLoopCommonModes];
+
+// Initialization code
 }
 
 - (void)setPatient:(Patient *)patient {
     _patient = patient;
     self.graphDataPoints = [NSMutableArray array];
-
-    [self.graphDataPoints addObject:[[ARGraphDataPoint alloc] initWithX:0 y:100]];
+    
+    [self.graphDataPoints addObject:[[ARGraphDataPoint alloc] initWithX:0 y:self.patient.heartRate]];
+    [self.lineGraph appendDataPoint:[self.graphDataPoints lastObject]];
+    self.lineGraph.showMeanLine = YES;
+    self.lineGraph.showMinMaxLines = YES;
+    self.lineGraph.showDots = YES;
+    self.lineGraph.showXLegend = YES;
+    self.lineGraph.showYLegend = YES;
+    self.lineGraph.tintColor = [UIColor blackColor];
+    self.lineGraph.shouldSmooth = YES;
+    self.lineGraph.layer.cornerRadius = 8.0;
+    self.lineGraph.clipsToBounds = YES;
+    self.lineGraph.dataSource = self;
+    [self.lineGraph beginAnimationIn];
     
     [self.lineGraph reloadData];
+    NSLog(@"patient first");
 }
 
 - (void)setupGraph {
@@ -35,8 +51,7 @@
     // Configure the view for the selected state
 }
 
-- (void)createDataPoint
-{
+- (void)createDataPoint {
     [self.graphDataPoints addObject:[[ARGraphDataPoint alloc] initWithX:arc4random()%10 y:100 +arc4random()%80]];
     [self.lineGraph appendDataPoint:[self.graphDataPoints lastObject]];
 }
@@ -45,8 +60,7 @@
     return self.title;
 }
 
-- (NSArray*)ARGraphDataPoints:(ARLineGraph *)graph
-{
+- (NSArray *)ARGraphDataPoints:(ARLineGraph *)graph {
     return self.graphDataPoints;
 }
 

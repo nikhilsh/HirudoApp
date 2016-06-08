@@ -7,16 +7,24 @@
 //
 
 #import "Patient.h"
+#import <MCModelDateValueTransformer.h>
 
 @implementation Patient
 
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
     return @{
-        @"temperature" : @"Temp",
-        @"heartRate" : @"HR",
+        @"temperature" : @"temp",
+        @"heartRate" : @"heartrate",
         @"bloodFlowRate" : @"flowrate",
-        @"patientID" : @"uid"
+        @"patientID" : @"pid",
+        @"date" : @"timestamp"
     };
 }
+
++ (NSValueTransformer *)dateJSONTransformer {
+    return [NSValueTransformer valueTransformerForName:MCModelDateTimeValueTransformerName];
+}
+
+
 @end
