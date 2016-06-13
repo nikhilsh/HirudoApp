@@ -3,7 +3,7 @@ platform :ios, '9.0'
 # Uncomment this line if you're using Swift
 # use_frameworks!
 
-target 'HirudoApp' do
+target 'HirudoiPad' do
   pod 'MCAdditions', :git => 'https://github.com/matthewcheok/MCAdditions.git'
   pod 'AFNetworking'
   pod 'MCAppRouter', '~> 0.1'

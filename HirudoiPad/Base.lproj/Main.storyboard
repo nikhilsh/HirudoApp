@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="ViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ooc-Jp-4gm" customClass="ARLineGraph">
+                                <rect key="frame" x="20" y="20" width="565" height="180"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RNQ-hm-Sfv" customClass="ARLineGraph">
+                                <rect key="frame" x="20" y="208" width="565" height="180"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0kQ-FU-Ncn" customClass="ARLineGraph">
+                                <rect key="frame" x="20" y="396" width="565" height="180"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="0kQ-FU-Ncn" firstAttribute="trailing" secondItem="RNQ-hm-Sfv" secondAttribute="trailing" id="60G-Ou-6fs"/>
+                            <constraint firstItem="0kQ-FU-Ncn" firstAttribute="leading" secondItem="RNQ-hm-Sfv" secondAttribute="leading" id="79v-tg-LQ0"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="0kQ-FU-Ncn" secondAttribute="bottom" constant="24" id="CoP-PE-y7O"/>
+                            <constraint firstItem="RNQ-hm-Sfv" firstAttribute="top" secondItem="ooc-Jp-4gm" secondAttribute="bottom" constant="8" id="OZ5-JC-pgH"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ooc-Jp-4gm" secondAttribute="trailing" constant="-5" id="ObG-DH-IlQ"/>
+                            <constraint firstItem="RNQ-hm-Sfv" firstAttribute="trailing" secondItem="ooc-Jp-4gm" secondAttribute="trailing" id="SxD-6c-XZS"/>
+                            <constraint firstItem="0kQ-FU-Ncn" firstAttribute="height" secondItem="RNQ-hm-Sfv" secondAttribute="height" id="XBl-Wn-t8y"/>
+                            <constraint firstItem="ooc-Jp-4gm" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="ddl-aD-TRl"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="ooc-Jp-4gm" secondAttribute="leading" id="krC-9T-rOc"/>
+                            <constraint firstItem="RNQ-hm-Sfv" firstAttribute="leading" secondItem="ooc-Jp-4gm" secondAttribute="leading" id="n4J-vO-rJC"/>
+                            <constraint firstItem="RNQ-hm-Sfv" firstAttribute="width" secondItem="ooc-Jp-4gm" secondAttribute="width" id="o8c-SV-YWx"/>
+                            <constraint firstItem="RNQ-hm-Sfv" firstAttribute="height" secondItem="ooc-Jp-4gm" secondAttribute="height" id="oRv-Jf-nKN"/>
+                            <constraint firstItem="0kQ-FU-Ncn" firstAttribute="width" secondItem="RNQ-hm-Sfv" secondAttribute="width" id="orD-rX-5Bh"/>
+                            <constraint firstItem="0kQ-FU-Ncn" firstAttribute="top" secondItem="RNQ-hm-Sfv" secondAttribute="bottom" constant="8" id="x6R-Wv-ZQP"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="graph1" destination="ooc-Jp-4gm" id="fhl-K5-xnR"/>
+                        <outlet property="graph2" destination="RNQ-hm-Sfv" id="jYD-6t-X2Q"/>
+                        <outlet property="graph3" destination="0kQ-FU-Ncn" id="ddP-sY-Bbh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="325" y="387"/>
+        </scene>
+    </scenes>
+</document>

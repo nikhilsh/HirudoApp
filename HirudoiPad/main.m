@@ -1,8 +1,8 @@
 //
 //  main.m
-//  HirudoApp
+//  HirudoiPad
 //
-//  Created by Nikhil Sharma on 27/5/16.
+//  Created by Nikhil Sharma on 13/6/16.
 //  Copyright © 2016 Nikhil Sharma. All rights reserved.
 //
 
