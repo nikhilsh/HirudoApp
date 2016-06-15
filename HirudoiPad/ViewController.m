@@ -104,7 +104,7 @@
     self.graph3.clipsToBounds = YES;
     self.graph3.dataSource = self;
     [self.graph3 beginAnimationIn];
-    self.oldValue3 = [self randomNumberBetween:20 maxNumber:100];
+    self.oldValue3 = [self randomNumberBetween:8 maxNumber:20];
     [self.graphDataPoints3 addObject:[[ARGraphDataPoint alloc] initWithX:0 y:self.oldValue3]];
 
     [self.graph3 reloadData];
@@ -117,16 +117,16 @@
     self.counter--;
     self.oldValue1 =[self randomNumberFromPreviousValue:self.oldValue1 AndScale:8];
     [self.graph1 appendDataPoint:[[ARGraphDataPoint alloc] initWithX:100-self.counter y:self.oldValue1]];
-    self.oldValue2 = [self randomFloatWithMinFloat:0.1 andMaxFloat:0.5];
+    self.oldValue2 = [self randomFloatWithMinFloat:-0.5 andMaxFloat:0.5];
     if (self.oldValue2 < 35.5) {
         self.oldValue2 += ((double)arc4random() / ARC4RANDOM_MAX);
     }
-    else if (self.oldValue2 >40){
+    else if (self.oldValue2 >40.0){
         self.oldValue2 -= ((double)arc4random() / ARC4RANDOM_MAX);
     }
     [self.graph2 appendDataPoint:[[ARGraphDataPoint alloc] initWithX:100-self.counter y:self.oldValue2]];
     NSLog(@"oldValue: %f", self.oldValue2);
-    self.oldValue3 = [self randomNumberFromPreviousValue:self.oldValue3 AndScale:10];
+    self.oldValue3 = [self randomNumberFromPreviousValue:self.oldValue3 AndScale:2];
     [self.graph3 appendDataPoint:[[ARGraphDataPoint alloc] initWithX:100-self.counter y:self.oldValue3]];
     
     self.currentHeartRateLabel.text = [NSString stringWithFormat:@"%i bpm", (int)self.oldValue1];
@@ -184,7 +184,7 @@
 }
 
 - (float)randomFloatWithMinFloat:(float)min andMaxFloat:(float)max {
-    return self.oldValue2 + ((arc4random()%RAND_MAX)/(RAND_MAX*1.0))*(max-min);
+    return self.oldValue2 + max * ((float)rand()/(float)RAND_MAX - 0.5);
 }
 
 @end
