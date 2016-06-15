@@ -37,22 +37,74 @@
                                     <constraint firstAttribute="height" constant="260" id="BYy-Cb-M3N"/>
                                 </constraints>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="VesselClear" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hrs-91-vYL">
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Current Heart Rate:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lgQ-Er-Q3d">
+                                <frame key="frameInset" minX="27" minY="338" width="167" height="26"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="19"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Initializing..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EIo-nJ-xcd">
+                                <frame key="frameInset" minX="202" minY="338" width="247" height="26"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="19"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Current Temperature:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3ae-WL-Hm9">
+                                <frame key="frameInset" minX="27" minY="656" width="187" height="26"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="19"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Initializing..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="row-PQ-bsm">
+                                <frame key="frameInset" minX="222" minY="656" width="282" height="26"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="19"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Current Blood Flow Rate:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lWS-aB-dCs">
+                                <frame key="frameInset" minX="27" minY="973" width="218" height="26"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="19"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Initializing..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bqH-gR-oUe">
+                                <frame key="frameInset" minX="253" minY="973" width="276" height="26"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="19"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="0kQ-FU-Ncn" secondAttribute="trailing" constant="-5" id="Hau-my-bdp"/>
                             <constraint firstItem="RNQ-hm-Sfv" firstAttribute="top" secondItem="ooc-Jp-4gm" secondAttribute="bottom" constant="55" id="I5c-1a-TjQ"/>
-                            <constraint firstItem="ooc-Jp-4gm" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="P0N-iF-yZQ"/>
+                            <constraint firstItem="ooc-Jp-4gm" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="44" id="P0N-iF-yZQ"/>
+                            <constraint firstItem="Hrs-91-vYL" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="RF3-k1-2H1"/>
                             <constraint firstItem="0kQ-FU-Ncn" firstAttribute="top" secondItem="RNQ-hm-Sfv" secondAttribute="bottom" constant="58" id="RhA-bI-9By"/>
                             <constraint firstAttribute="leadingMargin" secondItem="RNQ-hm-Sfv" secondAttribute="leading" id="T1p-yq-cMi"/>
+                            <constraint firstItem="Hrs-91-vYL" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="bhJ-rP-5nx"/>
                             <constraint firstAttribute="leadingMargin" secondItem="ooc-Jp-4gm" secondAttribute="leading" id="cE7-wU-WsZ"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="0kQ-FU-Ncn" secondAttribute="bottom" constant="111" id="f4k-qE-H6g"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="0kQ-FU-Ncn" secondAttribute="bottom" constant="67" id="f4k-qE-H6g"/>
                             <constraint firstAttribute="trailingMargin" secondItem="RNQ-hm-Sfv" secondAttribute="trailing" constant="-5" id="gTh-B4-2yd"/>
                             <constraint firstAttribute="leadingMargin" secondItem="0kQ-FU-Ncn" secondAttribute="leading" id="vPR-v8-GMd"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ooc-Jp-4gm" secondAttribute="trailing" id="vW7-Bz-vX5"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="currentBloodFlowRate" destination="bqH-gR-oUe" id="hhr-L8-FYE"/>
+                        <outlet property="currentHeartRateLabel" destination="EIo-nJ-xcd" id="yg4-Cz-7tQ"/>
+                        <outlet property="currentTemperatureLabel" destination="row-PQ-bsm" id="iAh-Fr-IUF"/>
                         <outlet property="graph1" destination="ooc-Jp-4gm" id="fhl-K5-xnR"/>
                         <outlet property="graph2" destination="RNQ-hm-Sfv" id="jYD-6t-X2Q"/>
                         <outlet property="graph3" destination="0kQ-FU-Ncn" id="ddP-sY-Bbh"/>
