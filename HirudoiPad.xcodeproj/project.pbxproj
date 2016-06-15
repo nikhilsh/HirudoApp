@@ -186,6 +186,8 @@
 				TargetAttributes = {
 					31D4CDC61D0EECEE00E83F5E = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = EHW7L3679R;
+						DevelopmentTeamName = "Nikhil Sharma";
 					};
 				};
 			};

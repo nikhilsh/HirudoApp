@@ -21,6 +21,8 @@
 @property (nonatomic,strong) NSMutableArray *graphDataPoints2;
 @property (nonatomic,strong) NSMutableArray *graphDataPoints3;
 
+@property (nonatomic, assign) int counter;
+
 
 @end
 
@@ -47,17 +49,14 @@
     self.graph1.showDots = YES;
     self.graph1.showXLegend = YES;
     self.graph1.showYLegend = YES;
-    self.graph1.tintColor = [UIColor redColor];
+    self.graph1.tintColor = [UIColor colorWithRed:0.3922 green:0.2089 blue:0.7482 alpha:1.0];
     self.graph1.shouldSmooth = YES;
     self.graph1.showXLegendValues = YES;
     self.graph1.layer.cornerRadius = 8.0;
     self.graph1.clipsToBounds = YES;
     self.graph1.dataSource = self;
+    self.graph1.animationDuration = 2.0f;
     [self.graph1 beginAnimationIn];
-    NSInteger perPopData1 = 100;
-    while (perPopData1--) {
-        [self.graphDataPoints1 addObject:[[ARGraphDataPoint alloc] initWithX:100 - perPopData1 y:100 + arc4random()%100]];
-    }
     
     [self.graph1 reloadData];
     
@@ -66,39 +65,40 @@
     self.graph2.showDots = NO;
     self.graph2.showXLegend = YES;
     self.graph2.showYLegend = YES;
-    self.graph2.tintColor = [UIColor greenColor];
+    self.graph2.tintColor = [UIColor colorWithRed:0.1888 green:0.5065 blue:0.6895 alpha:1.0];
     self.graph2.shouldSmooth = NO;
     self.graph2.showXLegendValues = YES;
     self.graph2.layer.cornerRadius = 8.0;
     self.graph2.clipsToBounds = YES;
     self.graph2.dataSource = self;
     [self.graph2 beginAnimationIn];
-    NSInteger perPopData2 = 100;
-    while (perPopData2--) {
-        [self.graphDataPoints2 addObject:[[ARGraphDataPoint alloc] initWithX:100 - perPopData2 y:100 + arc4random()%100]];
-    }
     
     [self.graph2 reloadData];
     
     self.graph3.showMeanLine = NO;
     self.graph3.showMinMaxLines = NO;
-    self.graph3.showDots = NO;
+    self.graph3.showDots = YES;
     self.graph3.showXLegend = YES;
     self.graph3.showYLegend = YES;
-    self.graph3.tintColor = [UIColor blueColor];
+    self.graph3.tintColor = [UIColor colorWithRed:1.0 green:0.2649 blue:0.155 alpha:1.0];
     self.graph3.shouldSmooth = NO;
     self.graph3.showXLegendValues = NO;
     self.graph3.layer.cornerRadius = 12.0;
     self.graph3.clipsToBounds = NO;
     self.graph3.dataSource = self;
     [self.graph3 beginAnimationIn];
-    NSInteger perPopData3 = 100;
-    while (perPopData3--) {
-        [self.graphDataPoints3 addObject:[[ARGraphDataPoint alloc] initWithX:100 - perPopData3 y:100 + arc4random()%100]];
-    }
     
     [self.graph3 reloadData];
 
+    [NSTimer scheduledTimerWithTimeInterval:0.3 target:self selector:@selector(addDataPoints) userInfo:nil repeats:YES];
+    self.counter = 5;
+}
+
+- (void)addDataPoints {
+    self.counter--;
+    [self.graph1 appendDataPoint:[[ARGraphDataPoint alloc] initWithX:100-self.counter y:100 + arc4random()%100]];
+    [self.graph2 appendDataPoint:[[ARGraphDataPoint alloc] initWithX:100-self.counter y:100 + arc4random()%100]];
+    [self.graph3 appendDataPoint:[[ARGraphDataPoint alloc] initWithX:100-self.counter y:100 + arc4random()%100]];
 }
 
 - (NSArray*)ARGraphDataPoints:(ARLineGraph *)graph {
