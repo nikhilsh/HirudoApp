@@ -21,6 +21,8 @@
 		31D4CDD51D0EECEE00E83F5E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31D4CDD31D0EECEE00E83F5E /* Main.storyboard */; };
 		31D4CDD71D0EECEE00E83F5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 31D4CDD61D0EECEE00E83F5E /* Assets.xcassets */; };
 		31D4CDDA1D0EECEE00E83F5E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31D4CDD81D0EECEE00E83F5E /* LaunchScreen.storyboard */; };
+		31DEAA171D182DAF000D4100 /* PatientListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31DEAA161D182DAF000D4100 /* PatientListTableViewController.m */; };
+		31DEAA1A1D183AE9000D4100 /* PatientTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 31DEAA191D183AE9000D4100 /* PatientTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +49,10 @@
 		31D4CDD61D0EECEE00E83F5E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		31D4CDD91D0EECEE00E83F5E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		31D4CDDB1D0EECEE00E83F5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		31DEAA151D182DAF000D4100 /* PatientListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PatientListTableViewController.h; sourceTree = "<group>"; };
+		31DEAA161D182DAF000D4100 /* PatientListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PatientListTableViewController.m; sourceTree = "<group>"; };
+		31DEAA181D183AE9000D4100 /* PatientTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PatientTableViewCell.h; sourceTree = "<group>"; };
+		31DEAA191D183AE9000D4100 /* PatientTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PatientTableViewCell.m; sourceTree = "<group>"; };
 		8A87D20974FD9B3A48A95014 /* Pods-HirudoiPad.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HirudoiPad.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HirudoiPad/Pods-HirudoiPad.debug.xcconfig"; sourceTree = "<group>"; };
 		9B82CC8C0727D7E842914D14 /* Pods-HirudoiPad.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HirudoiPad.release.xcconfig"; path = "Pods/Target Support Files/Pods-HirudoiPad/Pods-HirudoiPad.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -115,6 +121,10 @@
 				31D4CDD01D0EECEE00E83F5E /* ViewController.h */,
 				31D4CDD11D0EECEE00E83F5E /* ViewController.m */,
 				31D4CDD31D0EECEE00E83F5E /* Main.storyboard */,
+				31DEAA151D182DAF000D4100 /* PatientListTableViewController.h */,
+				31DEAA161D182DAF000D4100 /* PatientListTableViewController.m */,
+				31DEAA181D183AE9000D4100 /* PatientTableViewCell.h */,
+				31DEAA191D183AE9000D4100 /* PatientTableViewCell.m */,
 				31BF1E051D0EF7060023899B /* Model */,
 				31BF1E041D0EF6FF0023899B /* Client */,
 				31D4CDD61D0EECEE00E83F5E /* Assets.xcassets */,
@@ -280,9 +290,11 @@
 				31BF1DF71D0EF6E30023899B /* Patient.m in Sources */,
 				31BF1E031D0EF6F20023899B /* MCNetworkActivityLogger.m in Sources */,
 				31D4CDCF1D0EECEE00E83F5E /* AppDelegate.m in Sources */,
+				31DEAA171D182DAF000D4100 /* PatientListTableViewController.m in Sources */,
 				31BF1E011D0EF6F20023899B /* MCJSONRequestSerializer.m in Sources */,
 				31D4CDCC1D0EECEE00E83F5E /* main.m in Sources */,
 				31BF1E001D0EF6F20023899B /* Client.m in Sources */,
+				31DEAA1A1D183AE9000D4100 /* PatientTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
