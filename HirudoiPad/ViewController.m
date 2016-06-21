@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "Client.h"
 #import "ARLineGraph.h"
+#import <MCAlertView.h>
 
 #define ARC4RANDOM_MAX      0x100000000
 
@@ -47,6 +48,10 @@
 	[[Client sharedInstance] retrievePatients:^(NSError *error, NSArray *patients) {
 	         self.patients = [patients copy];
 	 }];
+    
+    UITapGestureRecognizer *gestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(createAlertSimulation)];
+    gestureRecognizer.numberOfTapsRequired = 2;
+    gestureRecognizer.numberOfTouchesRequired = 3;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -188,6 +193,10 @@
 
 - (float)randomFloatWithMinFloat:(float)min andMaxFloat:(float)max {
     return self.oldValue2 + max * ((float)rand()/(float)RAND_MAX - 0.5);
+}
+
+- (void)createAlertSimulation {
+    [[MCAlertView alertViewWithTitle:@"Warning!" message:@"Patient's Heart Rate has exceeded 120" actionButtonTitle:nil cancelButtonTitle:@"Okay" completionHandler:nil] show];
 }
 
 @end

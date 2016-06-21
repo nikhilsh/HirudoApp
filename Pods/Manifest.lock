@@ -54,6 +54,7 @@ PODS:
   - MCDynamicObject/Utilities (0.2):
     - PDKeychainBindingsController (~> 0.0.1)
     - TMCache (~> 1.2.0)
+  - MCModalView (0.3)
   - PDKeychainBindingsController (0.0.1)
   - SDWebImage (3.7.6):
     - SDWebImage/Core (= 3.7.6)
@@ -66,6 +67,7 @@ DEPENDENCIES:
   - MCAdditions (from `https://github.com/matthewcheok/MCAdditions.git`)
   - MCAppRouter (~> 0.1)
   - MCDynamicObject (~> 0.2)
+  - MCModalView (~> 0.2)
   - SDWebImage (~> 3.7)
 
 EXTERNAL SOURCES:
@@ -85,10 +87,11 @@ SPEC CHECKSUMS:
   MCAdditions: a8eba8b4be607f27f6abd668fe641eb8ac54cfe1
   MCAppRouter: 44762ea61f9c7b3d72e1149a0dce25998eb54507
   MCDynamicObject: 7f635cff8036c3d4855cc3b6a195a131c6d84a4a
+  MCModalView: 39d49e21a7a0a89a9f7f899e4b059a6a8b9c2c70
   PDKeychainBindingsController: fa8cb3cf99f2ea9240d61066ed0549f34e2cec3c
   SDWebImage: c325cf02c30337336b95beff20a13df489ec0ec9
   TMCache: a93984b045a5ee84bd8941bd5e0b54296059cc52
 
-PODFILE CHECKSUM: dbb4ce039c142accc60292fd76763a5e5f96878d
+PODFILE CHECKSUM: 610260c7f50509678c7f112276a3b24cdf2e5a42
 
 COCOAPODS: 1.0.0

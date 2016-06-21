@@ -10,5 +10,6 @@ target 'HirudoiPad' do
   pod 'MCDynamicObject', '~> 0.2'
   pod 'SDWebImage', '~> 3.7'
   pod 'ARGraphs', '~> 0.1'
+  pod 'MCModalView', '~> 0.2'
 end
 
