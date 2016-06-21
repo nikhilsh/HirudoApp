@@ -7,6 +7,8 @@
 //
 
 #import "PatientListTableViewController.h"
+#import "PatientTableViewCell.h"
+#import <MCAppRouter.h>
 
 @interface PatientListTableViewController ()
 
@@ -16,12 +18,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    self.title = @"Meech";
+//    [self.navigationController.navigationBar setTitleTextAttributes:@{
+//       NSFontAttributeName:[UIFont fontWithName:@"AvenirNext-Medium" size:21]}];
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -36,14 +36,21 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 0;
+    return 2;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PatientCell" forIndexPath:indexPath];
+    PatientTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PatientCell" forIndexPath:indexPath];
+    UIViewController *controller;
+    if (indexPath.row == 0) {
+        controller = [[MCAppRouter sharedInstance] viewControllerMatchingRoute:@"patient/list"];
+    }
+    else {
+        controller = [[MCAppRouter sharedInstance] viewControllerMatchingRoute:@"doctor"];
+    }
     
+    [self.navigationController pushViewController:controller animated:YES];
     // Configure the cell...
     
     return cell;

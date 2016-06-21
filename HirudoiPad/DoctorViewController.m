@@ -1,18 +1,18 @@
 //
-//  ViewController.m
+//  DoctorViewController.m
 //  HirudoiPad
 //
-//  Created by Nikhil Sharma on 13/6/16.
+//  Created by Nikhil Sharma on 21/6/16.
 //  Copyright © 2016 Nikhil Sharma. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "DoctorViewController.h"
 #import "Client.h"
 #import "ARLineGraph.h"
 
 #define ARC4RANDOM_MAX      0x100000000
 
-@interface ViewController () <ARLineGraphDataSource>
+@interface DoctorViewController () <ARLineGraphDataSource>
 
 @property (weak, nonatomic) IBOutlet ARLineGraph *graph1;
 @property (weak, nonatomic) IBOutlet ARLineGraph *graph2;
@@ -35,18 +35,18 @@
 
 @end
 
-@implementation ViewController
+@implementation DoctorViewController
 
 - (void)viewDidLoad {
-	[super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    [super viewDidLoad];
+    // Do any additional setup after loading the view, typically from a nib.
     self.title = @"Meech";
 //    [self.navigationController.navigationBar setTitleTextAttributes:@{
 //                                                                      NSFontAttributeName:[UIFont fontWithName:@"AvenirNext-Medium" size:21]}];
-	self.patients = [NSMutableArray new];
-	[[Client sharedInstance] retrievePatients:^(NSError *error, NSArray *patients) {
-	         self.patients = [patients copy];
-	 }];
+    self.patients = [NSMutableArray new];
+    [[Client sharedInstance] retrievePatients:^(NSError *error, NSArray *patients) {
+        self.patients = [patients copy];
+    }];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -54,7 +54,7 @@
     self.graphDataPoints1 = [NSMutableArray array];
     self.graphDataPoints2 = [NSMutableArray array];
     self.graphDataPoints3 = [NSMutableArray array];
-
+    
     
     self.graph1.showMeanLine = YES;
     self.graph1.showMinMaxLines = YES;
@@ -91,7 +91,7 @@
     [self.graph2 beginAnimationIn];
     self.oldValue2 = [self randomNumberBetween:35 maxNumber:39];
     [self.graphDataPoints2 addObject:[[ARGraphDataPoint alloc] initWithX:0 y:self.oldValue2]];
-
+    
     [self.graph2 reloadData];
     
     self.graph3.showMeanLine = NO;
@@ -109,9 +109,9 @@
     [self.graph3 beginAnimationIn];
     self.oldValue3 = [self randomNumberBetween:8 maxNumber:20];
     [self.graphDataPoints3 addObject:[[ARGraphDataPoint alloc] initWithX:0 y:self.oldValue3]];
-
+    
     [self.graph3 reloadData];
-
+    
     [NSTimer scheduledTimerWithTimeInterval:4 target:self selector:@selector(addDataPoints) userInfo:nil repeats:YES];
     self.counter = 99;
 }
@@ -174,8 +174,8 @@
 }
 
 - (void)didReceiveMemoryWarning {
-	[super didReceiveMemoryWarning];
-	// Dispose of any resources that can be recreated.
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
 }
 
 - (NSInteger)randomNumberFromPreviousValue:(int) previousValue AndScale:(float)delta {

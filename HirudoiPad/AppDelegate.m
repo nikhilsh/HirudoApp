@@ -18,9 +18,8 @@
 
 - (void)setupViewControllerRoutes {
     [[MCAppRouter sharedInstance] mapRoute:@"patient/list" toViewControllerInStoryboardWithName:@"Main" withIdentifer:@"PatientListTableViewController"];
-    
+    [[MCAppRouter sharedInstance] mapRoute:@"doctor" toViewControllerInStoryboardWithName:@"Main" withIdentifer:@"DoctorViewController"];
 }
-
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.

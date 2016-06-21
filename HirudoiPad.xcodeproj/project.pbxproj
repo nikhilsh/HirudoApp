@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2A8F0D0B3B679AC789688D6C /* libPods-HirudoiPad.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D6A3F62206C80C37E59243F /* libPods-HirudoiPad.a */; };
+		311A15971D197894001AE5CD /* DoctorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 311A15961D197894001AE5CD /* DoctorViewController.m */; };
 		31BF1DF21D0EF64B0023899B /* Jibber.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31BF1DF11D0EF64B0023899B /* Jibber.framework */; };
 		31BF1DF41D0EF6B80023899B /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 31BF1DF31D0EF6B80023899B /* libc++.tbd */; };
 		31BF1DF71D0EF6E30023899B /* Patient.m in Sources */ = {isa = PBXBuildFile; fileRef = 31BF1DF61D0EF6E30023899B /* Patient.m */; };
@@ -27,6 +28,8 @@
 
 /* Begin PBXFileReference section */
 		1D6A3F62206C80C37E59243F /* libPods-HirudoiPad.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HirudoiPad.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		311A15951D197894001AE5CD /* DoctorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoctorViewController.h; sourceTree = "<group>"; };
+		311A15961D197894001AE5CD /* DoctorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoctorViewController.m; sourceTree = "<group>"; };
 		31BF1DF11D0EF64B0023899B /* Jibber.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Jibber.framework; sourceTree = "<group>"; };
 		31BF1DF31D0EF6B80023899B /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		31BF1DF51D0EF6E30023899B /* Patient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Patient.h; sourceTree = "<group>"; };
@@ -71,6 +74,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		311A15981D197AB9001AE5CD /* Doctor View */ = {
+			isa = PBXGroup;
+			children = (
+				31DEAA151D182DAF000D4100 /* PatientListTableViewController.h */,
+				31DEAA161D182DAF000D4100 /* PatientListTableViewController.m */,
+				31DEAA181D183AE9000D4100 /* PatientTableViewCell.h */,
+				31DEAA191D183AE9000D4100 /* PatientTableViewCell.m */,
+			);
+			name = "Doctor View";
+			sourceTree = "<group>";
+		};
 		31BF1E041D0EF6FF0023899B /* Client */ = {
 			isa = PBXGroup;
 			children = (
@@ -118,13 +132,12 @@
 			children = (
 				31D4CDCD1D0EECEE00E83F5E /* AppDelegate.h */,
 				31D4CDCE1D0EECEE00E83F5E /* AppDelegate.m */,
+				311A15981D197AB9001AE5CD /* Doctor View */,
 				31D4CDD01D0EECEE00E83F5E /* ViewController.h */,
 				31D4CDD11D0EECEE00E83F5E /* ViewController.m */,
 				31D4CDD31D0EECEE00E83F5E /* Main.storyboard */,
-				31DEAA151D182DAF000D4100 /* PatientListTableViewController.h */,
-				31DEAA161D182DAF000D4100 /* PatientListTableViewController.m */,
-				31DEAA181D183AE9000D4100 /* PatientTableViewCell.h */,
-				31DEAA191D183AE9000D4100 /* PatientTableViewCell.m */,
+				311A15951D197894001AE5CD /* DoctorViewController.h */,
+				311A15961D197894001AE5CD /* DoctorViewController.m */,
 				31BF1E051D0EF7060023899B /* Model */,
 				31BF1E041D0EF6FF0023899B /* Client */,
 				31D4CDD61D0EECEE00E83F5E /* Assets.xcassets */,
@@ -293,6 +306,7 @@
 				31DEAA171D182DAF000D4100 /* PatientListTableViewController.m in Sources */,
 				31BF1E011D0EF6F20023899B /* MCJSONRequestSerializer.m in Sources */,
 				31D4CDCC1D0EECEE00E83F5E /* main.m in Sources */,
+				311A15971D197894001AE5CD /* DoctorViewController.m in Sources */,
 				31BF1E001D0EF6F20023899B /* Client.m in Sources */,
 				31DEAA1A1D183AE9000D4100 /* PatientTableViewCell.m in Sources */,
 			);
