@@ -33,6 +33,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *currentTemperatureLabel;
 @property (weak, nonatomic) IBOutlet UILabel *currentBloodFlowRate;
 
+@property (strong, nonatomic) NSDate *lastFetchedDate;
+@property (strong, nonatomic) NSTimer *timer;
+
 @end
 
 @implementation DoctorViewController
@@ -44,13 +47,26 @@
     [self.navigationController.navigationBar setTitleTextAttributes:@{
                                                                       NSFontAttributeName:[UIFont fontWithName:@"AvenirNext-Medium" size:21]}];
     self.patients = [NSMutableArray new];
-    [[Client sharedInstance] retrievePatients:^(NSError *error, NSArray *patients) {
-        self.patients = [patients copy];
-    }];
+    if (!self.lastFetchedDate) {
+        [[Client sharedInstance] retrievePatients:^(NSError *error, NSArray *patients) {
+            self.patients = [patients copy];
+        }];
+    }
+    else {
+        [[Client sharedInstance] retrievePatientsWithDate:self.lastFetchedDate withCompletionHander:^(NSError *error, NSArray *patients) {
+            self.patients = [patients copy];
+        }];
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    
+    [self createMockData];
+    
+}
+
+- (void)createMockData {
     self.graphDataPoints1 = [NSMutableArray array];
     self.graphDataPoints2 = [NSMutableArray array];
     self.graphDataPoints3 = [NSMutableArray array];
@@ -112,7 +128,7 @@
     
     [self.graph3 reloadData];
     
-    [NSTimer scheduledTimerWithTimeInterval:4 target:self selector:@selector(addDataPoints) userInfo:nil repeats:YES];
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:4 target:self selector:@selector(addDataPoints) userInfo:nil repeats:YES];
     self.counter = 99;
 }
 
@@ -176,6 +192,10 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)dealloc {
+    [self.timer invalidate];
 }
 
 - (NSInteger)randomNumberFromPreviousValue:(int) previousValue AndScale:(float)delta {
