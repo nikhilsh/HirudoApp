@@ -42,7 +42,7 @@ NSString *const ClientDidUpdateUserAccountNotification = @"ClientDidUpdateUserAc
 
 - (void)retrievePatients:(void (^)(NSError *error, NSArray *patients))completion {
     NSDictionary *params = @{
-                             @"did" : @(1)
+                             @"uid" : @(1)
                              };
     [self GET:@"doctor/data" parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSArray *patients = [Patient arrayOfModelFromJSONArray:responseObject[@"data"]];
