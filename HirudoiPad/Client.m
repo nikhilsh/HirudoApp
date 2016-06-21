@@ -42,7 +42,7 @@ NSString *const ClientDidUpdateUserAccountNotification = @"ClientDidUpdateUserAc
 
 - (void)retrievePatients:(void (^)(NSError *error, NSArray *patients))completion {
     NSDictionary *params = @{
-                             @"uid" : @(1)
+                             @"did" : @(1)
                              };
     [self GET:@"doctor/data" parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSArray *patients = [Patient arrayOfModelFromJSONArray:responseObject[@"data"]];
@@ -55,5 +55,20 @@ NSString *const ClientDidUpdateUserAccountNotification = @"ClientDidUpdateUserAc
     }];
 }
 
+- (void)retrievePatientsWithDate:(NSDate *) date withCompletionHander:(void (^)(NSError *error, NSArray *patients))completion {
+    NSDictionary *params = @{
+                             @"last" : date,
+                             @"did" : @(1)
+                             };
+    [self GET:@"doctor/datatime" parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSArray *patients = [Patient arrayOfModelFromJSONArray:responseObject[@"data"]];
+        if (completion) {
+            completion(nil, patients);
+        }
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        NSLog(@"error: %@", [error localizedDescription]);
+        completion(error, nil);
+    }];
+}
 
 @end

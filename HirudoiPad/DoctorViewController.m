@@ -41,8 +41,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     self.title = @"Meech";
-//    [self.navigationController.navigationBar setTitleTextAttributes:@{
-//                                                                      NSFontAttributeName:[UIFont fontWithName:@"AvenirNext-Medium" size:21]}];
+    [self.navigationController.navigationBar setTitleTextAttributes:@{
+                                                                      NSFontAttributeName:[UIFont fontWithName:@"AvenirNext-Medium" size:21]}];
     self.patients = [NSMutableArray new];
     [[Client sharedInstance] retrievePatients:^(NSError *error, NSArray *patients) {
         self.patients = [patients copy];
