@@ -52,6 +52,7 @@
     UITapGestureRecognizer *gestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(createAlertSimulation)];
     gestureRecognizer.numberOfTapsRequired = 2;
     gestureRecognizer.numberOfTouchesRequired = 3;
+    [self.view addGestureRecognizer:gestureRecognizer];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
