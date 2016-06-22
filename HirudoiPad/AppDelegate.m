@@ -17,7 +17,7 @@
 @implementation AppDelegate
 
 - (void)setupViewControllerRoutes {
-    [[MCAppRouter sharedInstance] mapRoute:@"patient/list" toViewControllerInStoryboardWithName:@"Main" withIdentifer:@"PatientListTableViewController"];
+    [[MCAppRouter sharedInstance] mapRoute:@"patient/list" toViewControllerInStoryboardWithName:@"Main" withIdentifer:@"ViewController"];
     [[MCAppRouter sharedInstance] mapRoute:@"doctor" toViewControllerInStoryboardWithName:@"Main" withIdentifer:@"DoctorViewController"];
 }
 

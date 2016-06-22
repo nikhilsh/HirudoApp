@@ -42,6 +42,13 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     PatientTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PatientCell" forIndexPath:indexPath];
+    
+    // Configure the cell...
+    
+    return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     UIViewController *controller;
     if (indexPath.row == 0) {
         controller = [[MCAppRouter sharedInstance] viewControllerMatchingRoute:@"patient/list"];
@@ -49,11 +56,7 @@
     else {
         controller = [[MCAppRouter sharedInstance] viewControllerMatchingRoute:@"doctor"];
     }
-    
     [self.navigationController pushViewController:controller animated:YES];
-    // Configure the cell...
-    
-    return cell;
 }
 
 
