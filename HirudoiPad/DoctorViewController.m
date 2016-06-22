@@ -36,6 +36,8 @@
 @property (strong, nonatomic) NSDate *lastFetchedDate;
 @property (strong, nonatomic) NSTimer *timer;
 
+@property (assign, nonatomic) int pointTracker;
+
 @end
 
 @implementation DoctorViewController
@@ -53,11 +55,12 @@
             Patient *patient = patients.lastObject;
             self.lastFetchedDate = patient.date;
             [self useRealData];
+            self.pointTracker = 10;
         }];
     }
     else {
         [[Client sharedInstance] retrievePatientsWithDate:self.lastFetchedDate withCompletionHander:^(NSError *error, NSArray *patients) {
-            self.patients = [patients copy];
+            [self.patients addObjectsFromArray:patients];
         }];
     }
 }
@@ -89,6 +92,8 @@
     [self.graph1 reloadData];
     [self.graph2 reloadData];
     [self.graph3 reloadData];
+
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:10 target:self selector:@selector(fetchRealDataPoints) userInfo:nil repeats:YES];
 }
 
 - (void)setupGraphs {
@@ -147,7 +152,6 @@
     [self.graphDataPoints1 addObject:[[ARGraphDataPoint alloc] initWithX:0 y:self.oldValue1]];
     
     [self.graph1 reloadData];
-    
    
     [self.graph2 beginAnimationIn];
     self.oldValue2 = [self randomNumberBetween:35 maxNumber:39];
@@ -155,15 +159,29 @@
     
     [self.graph2 reloadData];
     
-    
     [self.graph3 beginAnimationIn];
     self.oldValue3 = [self randomNumberBetween:8 maxNumber:20];
     [self.graphDataPoints3 addObject:[[ARGraphDataPoint alloc] initWithX:0 y:self.oldValue3]];
     
     [self.graph3 reloadData];
     
-    self.timer = [NSTimer scheduledTimerWithTimeInterval:4 target:self selector:@selector(addDataPoints) userInfo:nil repeats:YES];
     self.counter = 99;
+}
+
+- (void)fetchRealDataPoints {
+    __block Patient *patient = [[Patient alloc] init];
+    [[Client sharedInstance] retrievePatientsWithDate:self.lastFetchedDate withCompletionHander:^(NSError *error, NSArray *patients) {
+        [self.patients addObjectsFromArray:patients];
+        for (int i = 0; i<patients.count; i++) {
+            patient = patients[i];
+            NSLog(@"counter: %i", i);
+            [self.graph1 appendDataPoint:[[ARGraphDataPoint alloc] initWithX:self.pointTracker y:patient.heartRate]];
+            [self.graph2 appendDataPoint:[[ARGraphDataPoint alloc] initWithX:self.pointTracker y:patient.temperature]];
+            [self.graph3 appendDataPoint:[[ARGraphDataPoint alloc] initWithX:self.pointTracker y:patient.bloodFlowRate]];
+
+            self.pointTracker +=1;
+        }
+    }];
 }
 
 - (void)addDataPoints {
