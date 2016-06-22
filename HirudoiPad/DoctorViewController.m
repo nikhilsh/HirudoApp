@@ -49,7 +49,10 @@
     self.patients = [NSMutableArray new];
     if (!self.lastFetchedDate) {
         [[Client sharedInstance] retrievePatients:^(NSError *error, NSArray *patients) {
-            self.patients = [patients copy];
+            self.patients = [[patients subarrayWithRange:NSMakeRange(patients.count - 11, 10)] mutableCopy];
+            Patient *patient = patients.lastObject;
+            self.lastFetchedDate = patient.date;
+            [self useRealData];
         }];
     }
     else {
@@ -62,16 +65,38 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
-    [self createMockData];
-    
+    [self setupGraphs];
+//    [self createMockData];
 }
 
-- (void)createMockData {
+- (void)useRealData {
+    Patient *patient = [[Patient alloc] init];
+    
+    [self.graph1 beginAnimationIn];
+    [self.graph2 beginAnimationIn];
+    [self.graph3 beginAnimationIn];
+    
+    for (int i = 0; i<self.patients.count; i++) {
+        patient = self.patients[i];
+        NSLog(@"counter: %i", i);
+        self.oldValue1 = patient.heartRate;
+        [self.graphDataPoints1 addObject:[[ARGraphDataPoint alloc] initWithX:i y:self.oldValue1]];
+        self.oldValue2 = patient.temperature;
+        [self.graphDataPoints2 addObject:[[ARGraphDataPoint alloc] initWithX:i y:self.oldValue2]];
+        self.oldValue3 = patient.bloodFlowRate;
+        [self.graphDataPoints3 addObject:[[ARGraphDataPoint alloc] initWithX:i y:self.oldValue3]];
+    }
+    [self.graph1 reloadData];
+    [self.graph2 reloadData];
+    [self.graph3 reloadData];
+}
+
+- (void)setupGraphs {
     self.graphDataPoints1 = [NSMutableArray array];
     self.graphDataPoints2 = [NSMutableArray array];
     self.graphDataPoints3 = [NSMutableArray array];
     
-    
+    //graph 1 setup
     self.graph1.showMeanLine = YES;
     self.graph1.showMinMaxLines = YES;
     self.graph1.showDots = YES;
@@ -85,12 +110,8 @@
     self.graph1.clipsToBounds = YES;
     self.graph1.dataSource = self;
     self.graph1.animationDuration = 2.0f;
-    [self.graph1 beginAnimationIn];
-    self.oldValue1 = [self randomNumberBetween:40 maxNumber:130];
-    [self.graphDataPoints1 addObject:[[ARGraphDataPoint alloc] initWithX:0 y:self.oldValue1]];
     
-    [self.graph1 reloadData];
-    
+    //graph 2 setup
     self.graph2.showMeanLine = YES;
     self.graph2.showMinMaxLines = YES;
     self.graph2.showDots = YES;
@@ -104,12 +125,8 @@
     self.graph2.layer.cornerRadius = 8.0;
     self.graph2.clipsToBounds = YES;
     self.graph2.dataSource = self;
-    [self.graph2 beginAnimationIn];
-    self.oldValue2 = [self randomNumberBetween:35 maxNumber:39];
-    [self.graphDataPoints2 addObject:[[ARGraphDataPoint alloc] initWithX:0 y:self.oldValue2]];
     
-    [self.graph2 reloadData];
-    
+    //graph 3 setup
     self.graph3.showMeanLine = NO;
     self.graph3.showMinMaxLines = NO;
     self.graph3.showDots = YES;
@@ -122,6 +139,23 @@
     self.graph3.layer.cornerRadius = 8.0;
     self.graph3.clipsToBounds = YES;
     self.graph3.dataSource = self;
+}
+
+- (void)createMockData {
+    [self.graph1 beginAnimationIn];
+    self.oldValue1 = [self randomNumberBetween:40 maxNumber:130];
+    [self.graphDataPoints1 addObject:[[ARGraphDataPoint alloc] initWithX:0 y:self.oldValue1]];
+    
+    [self.graph1 reloadData];
+    
+   
+    [self.graph2 beginAnimationIn];
+    self.oldValue2 = [self randomNumberBetween:35 maxNumber:39];
+    [self.graphDataPoints2 addObject:[[ARGraphDataPoint alloc] initWithX:0 y:self.oldValue2]];
+    
+    [self.graph2 reloadData];
+    
+    
     [self.graph3 beginAnimationIn];
     self.oldValue3 = [self randomNumberBetween:8 maxNumber:20];
     [self.graphDataPoints3 addObject:[[ARGraphDataPoint alloc] initWithX:0 y:self.oldValue3]];

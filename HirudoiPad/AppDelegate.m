@@ -24,7 +24,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     [self setupViewControllerRoutes];
-    [JibberClient sharedInstance].connectionMode = JibberClientWirelessConnection;
+    
+    [JibberClient sharedInstance].connectionMode = JibberClientTetheredConnection;
     return YES;
 }
 
