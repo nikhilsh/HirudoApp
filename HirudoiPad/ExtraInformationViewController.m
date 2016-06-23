@@ -25,10 +25,13 @@
         self.typeLabel.text = @"Anti Coagulant Left";
         self.extraDetailLabel.text = @"Please pause the device and replace the anticoagulant syringe";
         self.amountLabel.text = @"30ml";
-        self.imageView.image = [UIImage imageNamed:@"blood bag"];
+        self.imageView.image = [UIImage imageNamed:@"picture_bloodbag"];
     }
     else {
-        
+        self.typeLabel.text = @"Blood pumped out";
+        self.extraDetailLabel.text = @"Total amount of blood pumped out";
+        self.amountLabel.text = @"80ml";
+        self.imageView.image = [UIImage imageNamed:@"picture_syringe"];
     }
     
     // Do any additional setup after loading the view.

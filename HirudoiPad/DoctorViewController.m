@@ -44,6 +44,7 @@
 @property (weak, nonatomic) IBOutlet MZTimerLabel *countdownTimer;
 @property (weak, nonatomic) IBOutlet MZTimerLabel *treatmentTimer;
 
+@property (weak, nonatomic) IBOutlet UIView *bloodBagView;
 
 @end
 
@@ -55,7 +56,13 @@
     self.title = @"Francisco Furtado";
     [self.navigationController.navigationBar setTitleTextAttributes:@{
                                                                       NSFontAttributeName:[UIFont fontWithName:@"AvenirNext-Medium" size:21]}];
+    
+    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
+
+
     self.patients = [NSMutableArray new];
+    [self setupGraphs];
+
     if (!self.lastFetchedDate) {
         [[Client sharedInstance] retrievePatients:^(NSError *error, NSArray *patients) {
             self.patients = [patients mutableCopy];
@@ -71,15 +78,28 @@
             [self useRealData];
         }];
     }
-    [self setupLabels];
+    
+    UITapGestureRecognizer *gestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pushNewViewController)];
+    [self.bloodBagView addGestureRecognizer:gestureRecognizer];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
-    [self setupGraphs];
-    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self setupLabels];
+    });
 //    [self createMockData];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    
+    [self.countdownTimer reset];
+    [self.countdownTimer pause];
+
+    [self.treatmentTimer reset];
+    [self.treatmentTimer pause];
 }
 
 - (void)useRealData {
@@ -265,7 +285,7 @@
         return @"beats/min";
     }
     else if (graph == self.graph2) {
-        return @"deg celsius";
+        return @"° celsius";
     }
     else {
         return @"ml";
@@ -293,6 +313,13 @@
     return self.oldValue2 + max * ((float)rand()/(float)RAND_MAX - 0.5);
 }
 
+- (void)pushNewViewController {
+    ExtraInformationViewController *controller = [[MCAppRouter sharedInstance] viewControllerMatchingRoute:@"extra"];
+    controller.isCoagulant = NO;
+    [self.navigationController pushViewController:controller animated:YES];
+}
+
+#pragma MARK - MZTimerLabel Delegate
 - (void)timerLabel:(MZTimerLabel *)timerLabel finshedCountDownTimerWithTime:(NSTimeInterval)countTime {
     [[MCAlertView alertViewWithTitle:@"Warning!" message:@"Anticoagulant is running low" actionButtonTitle:@"See More" cancelButtonTitle:@"Dismiss" completionHandler:^(BOOL cancelled) {
         if (!cancelled) {

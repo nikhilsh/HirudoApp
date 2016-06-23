@@ -172,7 +172,7 @@
         return @"beats/min";
     }
     else if (graph == self.graph2) {
-        return @"deg celsius";
+        return @"° celsius";
     }
     else {
         return @"ml";
