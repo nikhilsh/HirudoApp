@@ -42,6 +42,16 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     PatientTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PatientCell" forIndexPath:indexPath];
+    if (indexPath.row == 0) {
+        cell.patientNameLabel.text = @"Jermaine Cheng";
+        cell.patientDetailsLabel.text = [NSString stringWithFormat:@"%@,\n %@,\n %@", @"Gender: Male", @"Admitted Date: 2016-06-07", @"Ward: 1A"];
+        cell.patientDetailsLabel.numberOfLines = 3;
+    }
+    else {
+        cell.patientNameLabel.text = @"Francisco Caetano Dos Remedios Furtado";
+        cell.patientDetailsLabel.text = [NSString stringWithFormat:@"%@,\n %@,\n %@", @"Gender: Male", @"Admitted Date: 2016-06-08", @"Ward: 8D"];
+        cell.patientDetailsLabel.numberOfLines = 3;
+    }
     
     // Configure the cell...
     
