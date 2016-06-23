@@ -194,7 +194,7 @@
                                             <constraint firstAttribute="height" constant="260" id="uca-YA-uLB"/>
                                         </constraints>
                                     </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="80" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ksx-ec-bIq">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="80 bpm" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ksx-ec-bIq">
                                         <constraints>
                                             <constraint firstAttribute="width" constant="300" id="6iz-Al-Lq9"/>
                                             <constraint firstAttribute="height" constant="155" id="idT-eU-RqS"/>
@@ -207,7 +207,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="thG-Zi-BvX" secondAttribute="trailing" constant="82" id="7GQ-rk-XYU"/>
-                                    <constraint firstItem="thG-Zi-BvX" firstAttribute="top" secondItem="BXg-SP-Jh5" secondAttribute="top" constant="40" id="FvC-Yw-QjE"/>
+                                    <constraint firstItem="thG-Zi-BvX" firstAttribute="top" secondItem="BXg-SP-Jh5" secondAttribute="top" constant="50" id="FvC-Yw-QjE"/>
                                     <constraint firstItem="ksx-ec-bIq" firstAttribute="centerX" secondItem="thG-Zi-BvX" secondAttribute="centerX" id="MkC-im-gmJ"/>
                                     <constraint firstItem="BXg-SP-Jh5" firstAttribute="leading" secondItem="qYH-ab-48c" secondAttribute="leading" constant="20" id="W6U-W7-djX"/>
                                     <constraint firstAttribute="height" constant="280" id="ZMm-Gs-aZu"/>
@@ -230,7 +230,7 @@
                                             <constraint firstAttribute="height" constant="260" id="D7t-KZ-wvj"/>
                                         </constraints>
                                     </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="200" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2R5-eg-EFi">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="200°C" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2R5-eg-EFi">
                                         <constraints>
                                             <constraint firstAttribute="height" constant="155" id="rGW-xR-ZR7"/>
                                         </constraints>
@@ -246,7 +246,7 @@
                                     <constraint firstItem="15d-UO-tnP" firstAttribute="centerY" secondItem="Z4M-wB-pxd" secondAttribute="centerY" id="Xvn-Ok-dPk"/>
                                     <constraint firstAttribute="trailing" secondItem="WSf-Ak-Bas" secondAttribute="trailing" constant="62" id="abz-3O-Mli"/>
                                     <constraint firstItem="2R5-eg-EFi" firstAttribute="centerX" secondItem="WSf-Ak-Bas" secondAttribute="centerX" id="grf-Ur-Ibz"/>
-                                    <constraint firstItem="WSf-Ak-Bas" firstAttribute="top" secondItem="15d-UO-tnP" secondAttribute="top" constant="40" id="k3x-Hf-bq3"/>
+                                    <constraint firstItem="WSf-Ak-Bas" firstAttribute="top" secondItem="15d-UO-tnP" secondAttribute="top" constant="50" id="k3x-Hf-bq3"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iWb-op-iZI">
@@ -263,7 +263,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g0K-iZ-Rtx">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100ml/min" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g0K-iZ-Rtx">
                                         <constraints>
                                             <constraint firstAttribute="height" constant="155" id="Cgk-93-cBB"/>
                                         </constraints>
@@ -278,39 +278,73 @@
                                     <constraint firstItem="g0K-iZ-Rtx" firstAttribute="centerX" secondItem="NgX-LN-VTk" secondAttribute="centerX" id="Nft-bC-NKy"/>
                                     <constraint firstItem="NgX-LN-VTk" firstAttribute="leading" secondItem="Lat-yD-9kt" secondAttribute="trailing" constant="88" id="Tpd-Dg-F0U"/>
                                     <constraint firstItem="g0K-iZ-Rtx" firstAttribute="top" secondItem="NgX-LN-VTk" secondAttribute="bottom" constant="7" id="aku-KH-X1S"/>
-                                    <constraint firstItem="NgX-LN-VTk" firstAttribute="top" secondItem="Lat-yD-9kt" secondAttribute="top" constant="40" id="kUJ-JJ-cwH"/>
+                                    <constraint firstItem="NgX-LN-VTk" firstAttribute="top" secondItem="Lat-yD-9kt" secondAttribute="top" constant="50" id="kUJ-JJ-cwH"/>
                                     <constraint firstItem="Lat-yD-9kt" firstAttribute="leading" secondItem="iWb-op-iZI" secondAttribute="leading" constant="20" id="oKn-GL-VpG"/>
                                 </constraints>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b2Q-d4-je1" customClass="MZTimerLabel">
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Anticoagulant Timer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QgC-QO-jAa">
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A06-0J-Kz9" customClass="MZTimerLabel">
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Session Treatment Time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EH7-50-ui8" customClass="MZTimerLabel">
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="QYS-Am-bs3" firstAttribute="top" secondItem="A06-0J-Kz9" secondAttribute="bottom" constant="20" id="1QL-QH-YSG"/>
+                            <constraint firstItem="QgC-QO-jAa" firstAttribute="trailing" secondItem="b2Q-d4-je1" secondAttribute="trailing" id="3nb-Jk-qRU"/>
                             <constraint firstItem="qYH-ab-48c" firstAttribute="top" secondItem="duu-cP-ODc" secondAttribute="bottom" constant="20" id="5Cp-d6-y8g"/>
+                            <constraint firstItem="b2Q-d4-je1" firstAttribute="top" secondItem="QgC-QO-jAa" secondAttribute="bottom" constant="8" id="6EB-Ns-URk"/>
                             <constraint firstItem="Z4M-wB-pxd" firstAttribute="top" secondItem="qYH-ab-48c" secondAttribute="bottom" id="8WW-L8-qgV"/>
                             <constraint firstAttribute="trailingMargin" secondItem="qYH-ab-48c" secondAttribute="trailing" id="AXN-GF-MgX"/>
                             <constraint firstItem="2R5-eg-EFi" firstAttribute="height" secondItem="ksx-ec-bIq" secondAttribute="height" id="Ado-KX-kNi"/>
                             <constraint firstItem="Lat-yD-9kt" firstAttribute="height" secondItem="15d-UO-tnP" secondAttribute="height" id="C1M-ac-hkR"/>
                             <constraint firstItem="iWb-op-iZI" firstAttribute="height" secondItem="Z4M-wB-pxd" secondAttribute="height" id="E5v-q2-4e5"/>
+                            <constraint firstItem="QYS-Am-bs3" firstAttribute="top" secondItem="b2Q-d4-je1" secondAttribute="bottom" constant="20" id="FPs-Ge-fXh"/>
+                            <constraint firstItem="EH7-50-ui8" firstAttribute="trailing" secondItem="A06-0J-Kz9" secondAttribute="trailing" id="H3V-Kr-8u8"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="A06-0J-Kz9" secondAttribute="trailing" id="IDS-9e-kNj"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="b2Q-d4-je1" secondAttribute="leading" id="JUZ-U5-b6D"/>
                             <constraint firstItem="2R5-eg-EFi" firstAttribute="width" secondItem="ksx-ec-bIq" secondAttribute="width" id="S6g-Tr-Rh0"/>
+                            <constraint firstItem="QgC-QO-jAa" firstAttribute="leading" secondItem="b2Q-d4-je1" secondAttribute="leading" id="aXP-Zg-adV"/>
                             <constraint firstAttribute="leadingMargin" secondItem="Z4M-wB-pxd" secondAttribute="leading" id="bCh-bY-7l7"/>
+                            <constraint firstItem="EH7-50-ui8" firstAttribute="leading" secondItem="A06-0J-Kz9" secondAttribute="leading" id="cM5-xy-WAa"/>
                             <constraint firstItem="15d-UO-tnP" firstAttribute="height" secondItem="BXg-SP-Jh5" secondAttribute="height" id="dAi-dW-Jcg"/>
                             <constraint firstItem="qYH-ab-48c" firstAttribute="leading" secondItem="Rzc-OZ-FfI" secondAttribute="leadingMargin" id="dmv-fa-Gki"/>
                             <constraint firstItem="iWb-op-iZI" firstAttribute="top" secondItem="Z4M-wB-pxd" secondAttribute="bottom" id="fDE-49-mWi"/>
                             <constraint firstItem="Z4M-wB-pxd" firstAttribute="height" secondItem="qYH-ab-48c" secondAttribute="height" id="iuc-NJ-vZ6"/>
                             <constraint firstAttribute="trailingMargin" secondItem="iWb-op-iZI" secondAttribute="trailing" id="k5C-ZN-kA0"/>
                             <constraint firstItem="g0K-iZ-Rtx" firstAttribute="height" secondItem="2R5-eg-EFi" secondAttribute="height" id="llq-rM-fsP"/>
+                            <constraint firstItem="b2Q-d4-je1" firstAttribute="width" secondItem="A06-0J-Kz9" secondAttribute="width" id="nHN-xN-LY4"/>
                             <constraint firstItem="g0K-iZ-Rtx" firstAttribute="width" secondItem="2R5-eg-EFi" secondAttribute="width" id="nXD-4h-xgr"/>
+                            <constraint firstItem="A06-0J-Kz9" firstAttribute="leading" secondItem="b2Q-d4-je1" secondAttribute="trailing" constant="8" id="pFn-gl-Y9g"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Z4M-wB-pxd" secondAttribute="trailing" id="poz-I7-Vf1"/>
                             <constraint firstItem="iWb-op-iZI" firstAttribute="leading" secondItem="Rzc-OZ-FfI" secondAttribute="leadingMargin" id="sUV-jq-k2r"/>
+                            <constraint firstItem="A06-0J-Kz9" firstAttribute="top" secondItem="EH7-50-ui8" secondAttribute="bottom" constant="8" id="yNF-Th-Ag5"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="countdownTimer" destination="b2Q-d4-je1" id="VQJ-t0-xqA"/>
                         <outlet property="currentBloodFlowRate" destination="g0K-iZ-Rtx" id="y3P-KO-HQW"/>
                         <outlet property="currentHeartRateLabel" destination="ksx-ec-bIq" id="3aZ-cc-CeQ"/>
                         <outlet property="currentTemperatureLabel" destination="2R5-eg-EFi" id="bcs-Mz-DHy"/>
                         <outlet property="graph1" destination="BXg-SP-Jh5" id="7ML-VK-8YH"/>
                         <outlet property="graph2" destination="15d-UO-tnP" id="Xyr-ra-Vju"/>
                         <outlet property="graph3" destination="Lat-yD-9kt" id="rfd-bh-NEf"/>
+                        <outlet property="treatmentTimer" destination="A06-0J-Kz9" id="6Fm-DZ-r0I"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1FO-mE-T01" sceneMemberID="firstResponder"/>

@@ -11,5 +11,6 @@ target 'HirudoiPad' do
   pod 'SDWebImage', '~> 3.7'
   pod 'ARGraphs', '~> 0.1'
   pod 'MCModalView', '~> 0.2'
+  pod 'MZTimerLabel'
 end
 

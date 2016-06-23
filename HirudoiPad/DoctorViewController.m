@@ -9,10 +9,12 @@
 #import "DoctorViewController.h"
 #import "Client.h"
 #import "ARLineGraph.h"
+#import <MCAlertView.h>
+#import <MZTimerLabel.h>
 
 #define ARC4RANDOM_MAX      0x100000000
 
-@interface DoctorViewController () <ARLineGraphDataSource>
+@interface DoctorViewController () <ARLineGraphDataSource, MZTimerLabelDelegate>
 
 @property (weak, nonatomic) IBOutlet ARLineGraph *graph1;
 @property (weak, nonatomic) IBOutlet ARLineGraph *graph2;
@@ -37,6 +39,9 @@
 @property (strong, nonatomic) NSTimer *timer;
 
 @property (assign, nonatomic) int pointTracker;
+@property (weak, nonatomic) IBOutlet MZTimerLabel *countdownTimer;
+@property (weak, nonatomic) IBOutlet MZTimerLabel *treatmentTimer;
+
 
 @end
 
@@ -64,6 +69,7 @@
             [self useRealData];
         }];
     }
+    [self setupLabels];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -155,6 +161,15 @@
     self.graph3.dataSource = self;
     self.graph3.animationDuration = 2.0f;
 
+}
+
+- (void)setupLabels {
+    [self.countdownTimer setCountDownTime:10];
+    self.countdownTimer.delegate = self;
+    self.countdownTimer.timerType = MZTimerLabelTypeTimer;
+    [self.countdownTimer start];
+    
+    [self.treatmentTimer start];
 }
 
 - (void)createMockData {
@@ -276,6 +291,10 @@
 
 - (float)randomFloatWithMinFloat:(float)min andMaxFloat:(float)max {
     return self.oldValue2 + max * ((float)rand()/(float)RAND_MAX - 0.5);
+}
+
+- (void)timerLabel:(MZTimerLabel *)timerLabel finshedCountDownTimerWithTime:(NSTimeInterval)countTime {
+    [[MCAlertView alertViewWithTitle:@"Warning!" message:@"Anticoagulant is running low" actionButtonTitle:nil cancelButtonTitle:@"Okay" completionHandler:nil] show];
 }
 
 @end
