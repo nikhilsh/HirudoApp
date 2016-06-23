@@ -51,16 +51,17 @@
     self.patients = [NSMutableArray new];
     if (!self.lastFetchedDate) {
         [[Client sharedInstance] retrievePatients:^(NSError *error, NSArray *patients) {
-            self.patients = [[patients subarrayWithRange:NSMakeRange(patients.count - 11, 10)] mutableCopy];
+            self.patients = [patients mutableCopy];
             Patient *patient = patients.lastObject;
             self.lastFetchedDate = patient.date;
             [self useRealData];
-            self.pointTracker = 10;
+            self.pointTracker = (int)self.patients.count;
         }];
     }
     else {
         [[Client sharedInstance] retrievePatientsWithDate:self.lastFetchedDate withCompletionHander:^(NSError *error, NSArray *patients) {
             [self.patients addObjectsFromArray:patients];
+            [self useRealData];
         }];
     }
 }
@@ -69,6 +70,7 @@
     [super viewWillAppear:animated];
     
     [self setupGraphs];
+    
 //    [self createMockData];
 }
 
@@ -130,20 +132,24 @@
     self.graph2.layer.cornerRadius = 8.0;
     self.graph2.clipsToBounds = YES;
     self.graph2.dataSource = self;
+    self.graph2.animationDuration = 2.0f;
+
     
     //graph 3 setup
-    self.graph3.showMeanLine = NO;
-    self.graph3.showMinMaxLines = NO;
+    self.graph3.showMeanLine = YES;
+    self.graph3.showMinMaxLines = YES;
     self.graph3.showDots = YES;
     self.graph3.showXLegend = YES;
     self.graph3.showYLegend = YES;
     self.graph3.useBackgroundGradient = YES;
     self.graph3.tintColor = [UIColor colorWithRed:1.0 green:0.2649 blue:0.155 alpha:1.0];
-    self.graph3.shouldSmooth = NO;
+    self.graph3.shouldSmooth = YES;
     self.graph3.showXLegendValues = YES;
     self.graph3.layer.cornerRadius = 8.0;
     self.graph3.clipsToBounds = YES;
     self.graph3.dataSource = self;
+    self.graph3.animationDuration = 2.0f;
+
 }
 
 - (void)createMockData {
@@ -205,7 +211,7 @@
     self.currentBloodFlowRate.text = [NSString stringWithFormat:@"%i ml/min", (int)self.oldValue3];
 }
 
-- (NSArray*)ARGraphDataPoints:(ARLineGraph *)graph {
+- (NSArray *)ARGraphDataPoints:(ARLineGraph *)graph {
     if (graph == self.graph1) {
         return self.graphDataPoints1;
     }
@@ -217,7 +223,7 @@
     }
 }
 
-- (NSString*)titleForGraph:(ARLineGraph*)graph {
+- (NSString *)titleForGraph:(ARLineGraph*)graph {
     if (graph == self.graph1) {
         return @"Heart Rate";
     }
@@ -229,7 +235,7 @@
     }
 }
 
-- (NSString*)subTitleForGraph:(ARLineGraph*)graph {
+- (NSString *)subTitleForGraph:(ARLineGraph*)graph {
     if (graph == self.graph1) {
         return @"beats/min";
     }
