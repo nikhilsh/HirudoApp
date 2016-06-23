@@ -55,7 +55,7 @@ NSString *const ClientDidUpdateUserAccountNotification = @"ClientDidUpdateUserAc
     }];
 }
 
-- (void)retrievePatientsWithDate:(NSDate *) date withCompletionHander:(void (^)(NSError *error, NSArray *patients))completion {
+- (void)retrievePatientsWithDate:(NSDate *)date withCompletionHander:(void (^)(NSError *error, NSArray *patients))completion {
     NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
     [dateFormat setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
     NSString *dateString = [dateFormat stringFromDate:date];

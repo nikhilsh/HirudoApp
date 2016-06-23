@@ -195,13 +195,11 @@
 }
 
 - (void)fetchRealDataPoints {
-    NSLog(@"run");
     __block Patient *patient = [[Patient alloc] init];
     [[Client sharedInstance] retrievePatientsWithDate:self.lastFetchedDate withCompletionHander:^(NSError *error, NSArray *patients) {
         [self.patients addObjectsFromArray:patients];
         for (int i = 0; i<patients.count; i++) {
             patient = patients[i];
-            NSLog(@"counter: %i", i);
             [self.graph1 appendDataPoint:[[ARGraphDataPoint alloc] initWithX:self.pointTracker y:patient.heartRate]];
             [self.graph2 appendDataPoint:[[ARGraphDataPoint alloc] initWithX:self.pointTracker y:patient.temperature]];
             [self.graph3 appendDataPoint:[[ARGraphDataPoint alloc] initWithX:self.pointTracker y:patient.bloodFlowRate]];
