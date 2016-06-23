@@ -351,6 +351,66 @@
             </objects>
             <point key="canvasLocation" x="1090.625" y="1102.734375"/>
         </scene>
+        <!--More Information-->
+        <scene sceneID="XAI-q2-Tpd">
+            <objects>
+                <viewController storyboardIdentifier="ExtraInformationViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="dMH-78-gQR" customClass="ExtraInformationViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="W9K-DA-04f"/>
+                        <viewControllerLayoutGuide type="bottom" id="UdX-O8-k8n"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Hep-S7-7NL">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HvA-na-VaW">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="533" id="NnC-wg-Xtw"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Anti Coagulant Left" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R1O-4N-Td7">
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="50"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="30ml" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PoA-Lm-izS">
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="50"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please pause the device and replace the anticoagulant syringe" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0lw-Km-yhE">
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="23"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="0lw-Km-yhE" firstAttribute="leading" secondItem="Hep-S7-7NL" secondAttribute="leadingMargin" constant="38" id="5xH-fs-6OP"/>
+                            <constraint firstItem="PoA-Lm-izS" firstAttribute="top" secondItem="HvA-na-VaW" secondAttribute="bottom" constant="107" id="D81-jS-F71"/>
+                            <constraint firstItem="R1O-4N-Td7" firstAttribute="top" secondItem="PoA-Lm-izS" secondAttribute="bottom" constant="8" id="DHl-jF-z15"/>
+                            <constraint firstItem="HvA-na-VaW" firstAttribute="top" secondItem="W9K-DA-04f" secondAttribute="bottom" constant="8" id="EDI-5J-Luz"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="HvA-na-VaW" secondAttribute="trailing" constant="-20" id="IPY-VT-yhg"/>
+                            <constraint firstItem="HvA-na-VaW" firstAttribute="leading" secondItem="Hep-S7-7NL" secondAttribute="leadingMargin" constant="-20" id="eCi-TG-Hri"/>
+                            <constraint firstItem="R1O-4N-Td7" firstAttribute="leading" secondItem="Hep-S7-7NL" secondAttribute="leadingMargin" constant="145" id="joc-yH-Fgh"/>
+                            <constraint firstItem="0lw-Km-yhE" firstAttribute="top" secondItem="R1O-4N-Td7" secondAttribute="bottom" constant="8" id="mXA-MU-Zjz"/>
+                            <constraint firstItem="PoA-Lm-izS" firstAttribute="leading" secondItem="Hep-S7-7NL" secondAttribute="leadingMargin" constant="307" id="ofn-TU-JVP"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="More Information" id="nlY-sl-1i7">
+                        <barButtonItem key="backBarButtonItem" title=" " id="Xcy-MR-Zd9"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="amountLabel" destination="PoA-Lm-izS" id="h79-6i-s82"/>
+                        <outlet property="extraDetailLabel" destination="0lw-Km-yhE" id="RkW-KO-67O"/>
+                        <outlet property="imageView" destination="HvA-na-VaW" id="yZ2-Sv-INh"/>
+                        <outlet property="typeLabel" destination="R1O-4N-Td7" id="WKd-Eq-yjA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0Xe-bd-awp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1793.75" y="1102.734375"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="3en-bo-9f0">
             <objects>

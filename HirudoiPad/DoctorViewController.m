@@ -8,7 +8,9 @@
 
 #import "DoctorViewController.h"
 #import "Client.h"
+#import "ExtraInformationViewController.h"
 #import "ARLineGraph.h"
+#import <MCAppRouter.h>
 #import <MCAlertView.h>
 #import <MZTimerLabel.h>
 
@@ -292,7 +294,13 @@
 }
 
 - (void)timerLabel:(MZTimerLabel *)timerLabel finshedCountDownTimerWithTime:(NSTimeInterval)countTime {
-    [[MCAlertView alertViewWithTitle:@"Warning!" message:@"Anticoagulant is running low" actionButtonTitle:nil cancelButtonTitle:@"Okay" completionHandler:nil] show];
+    [[MCAlertView alertViewWithTitle:@"Warning!" message:@"Anticoagulant is running low" actionButtonTitle:@"See More" cancelButtonTitle:@"Dismiss" completionHandler:^(BOOL cancelled) {
+        if (!cancelled) {
+            ExtraInformationViewController *controller = [[MCAppRouter sharedInstance] viewControllerMatchingRoute:@"extra"];
+            controller.isCoagulant = YES;
+            [self.navigationController pushViewController:controller animated:YES];
+        }
+    }] show];
 }
 
 @end
