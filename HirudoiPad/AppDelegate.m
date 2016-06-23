@@ -9,6 +9,9 @@
 #import "AppDelegate.h"
 #import <MCAppRouter.h>
 #import <Jibber/JibberClient.h>
+#import <Fabric/Fabric.h>
+#import <Crashlytics/Crashlytics.h>
+
 
 @interface AppDelegate ()
 
@@ -26,6 +29,8 @@
     [self setupViewControllerRoutes];
     
     [JibberClient sharedInstance].connectionMode = JibberClientTetheredConnection;
+    [Fabric with:@[[Crashlytics class]]];
+
     return YES;
 }
 

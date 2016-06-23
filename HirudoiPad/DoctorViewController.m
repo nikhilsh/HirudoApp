@@ -90,6 +90,11 @@
         [self.graphDataPoints2 addObject:[[ARGraphDataPoint alloc] initWithX:i y:self.oldValue2]];
         self.oldValue3 = patient.bloodFlowRate;
         [self.graphDataPoints3 addObject:[[ARGraphDataPoint alloc] initWithX:i y:self.oldValue3]];
+        
+        //set labels
+        self.currentHeartRateLabel.text = [NSString stringWithFormat:@"%i bpm", (int)patient.heartRate];
+        self.currentTemperatureLabel.text = [NSString stringWithFormat:@"%0.2f°C", patient.temperature];
+        self.currentBloodFlowRate.text = [NSString stringWithFormat:@"%i ml/min", (int)patient.bloodFlowRate];
     }
     [self.graph1 reloadData];
     [self.graph2 reloadData];
@@ -175,6 +180,7 @@
 }
 
 - (void)fetchRealDataPoints {
+    NSLog(@"run");
     __block Patient *patient = [[Patient alloc] init];
     [[Client sharedInstance] retrievePatientsWithDate:self.lastFetchedDate withCompletionHander:^(NSError *error, NSArray *patients) {
         [self.patients addObjectsFromArray:patients];
@@ -184,7 +190,11 @@
             [self.graph1 appendDataPoint:[[ARGraphDataPoint alloc] initWithX:self.pointTracker y:patient.heartRate]];
             [self.graph2 appendDataPoint:[[ARGraphDataPoint alloc] initWithX:self.pointTracker y:patient.temperature]];
             [self.graph3 appendDataPoint:[[ARGraphDataPoint alloc] initWithX:self.pointTracker y:patient.bloodFlowRate]];
-
+            
+            //set labels
+            self.currentHeartRateLabel.text = [NSString stringWithFormat:@"%i bpm", (int)patient.heartRate];
+            self.currentTemperatureLabel.text = [NSString stringWithFormat:@"%0.2f°C", patient.temperature];
+            self.currentBloodFlowRate.text = [NSString stringWithFormat:@"%i ml/min", (int)patient.bloodFlowRate];
             self.pointTracker +=1;
         }
     }];

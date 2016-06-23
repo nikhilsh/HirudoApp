@@ -9,7 +9,9 @@
 /* Begin PBXBuildFile section */
 		2A8F0D0B3B679AC789688D6C /* libPods-HirudoiPad.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D6A3F62206C80C37E59243F /* libPods-HirudoiPad.a */; };
 		311A15971D197894001AE5CD /* DoctorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 311A15961D197894001AE5CD /* DoctorViewController.m */; };
-		31BF1DF21D0EF64B0023899B /* Jibber.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31BF1DF11D0EF64B0023899B /* Jibber.framework */; };
+		316337A51D1BB85700C93495 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 316337A31D1BB85700C93495 /* Fabric.framework */; };
+		316337A61D1BB85800C93495 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 316337A41D1BB85700C93495 /* Crashlytics.framework */; };
+		316337AC1D1BBB7E00C93495 /* Jibber.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 316337AB1D1BBB7E00C93495 /* Jibber.framework */; };
 		31BF1DF41D0EF6B80023899B /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 31BF1DF31D0EF6B80023899B /* libc++.tbd */; };
 		31BF1DF71D0EF6E30023899B /* Patient.m in Sources */ = {isa = PBXBuildFile; fileRef = 31BF1DF61D0EF6E30023899B /* Patient.m */; };
 		31BF1E001D0EF6F20023899B /* Client.m in Sources */ = {isa = PBXBuildFile; fileRef = 31BF1DF91D0EF6F20023899B /* Client.m */; };
@@ -30,7 +32,9 @@
 		1D6A3F62206C80C37E59243F /* libPods-HirudoiPad.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HirudoiPad.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		311A15951D197894001AE5CD /* DoctorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoctorViewController.h; sourceTree = "<group>"; };
 		311A15961D197894001AE5CD /* DoctorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoctorViewController.m; sourceTree = "<group>"; };
-		31BF1DF11D0EF64B0023899B /* Jibber.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Jibber.framework; sourceTree = "<group>"; };
+		316337A31D1BB85700C93495 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
+		316337A41D1BB85700C93495 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
+		316337AB1D1BBB7E00C93495 /* Jibber.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Jibber.framework; sourceTree = "<group>"; };
 		31BF1DF31D0EF6B80023899B /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		31BF1DF51D0EF6E30023899B /* Patient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Patient.h; sourceTree = "<group>"; };
 		31BF1DF61D0EF6E30023899B /* Patient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Patient.m; sourceTree = "<group>"; };
@@ -66,8 +70,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				31BF1DF41D0EF6B80023899B /* libc++.tbd in Frameworks */,
-				31BF1DF21D0EF64B0023899B /* Jibber.framework in Frameworks */,
+				316337AC1D1BBB7E00C93495 /* Jibber.framework in Frameworks */,
+				316337A61D1BB85800C93495 /* Crashlytics.framework in Frameworks */,
 				2A8F0D0B3B679AC789688D6C /* libPods-HirudoiPad.a in Frameworks */,
+				316337A51D1BB85700C93495 /* Fabric.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -151,6 +157,9 @@
 		31D4CDCA1D0EECEE00E83F5E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				316337AB1D1BBB7E00C93495 /* Jibber.framework */,
+				316337A31D1BB85700C93495 /* Fabric.framework */,
+				316337A41D1BB85700C93495 /* Crashlytics.framework */,
 				31D4CDCB1D0EECEE00E83F5E /* main.m */,
 			);
 			name = "Supporting Files";
@@ -160,7 +169,6 @@
 			isa = PBXGroup;
 			children = (
 				31BF1DF31D0EF6B80023899B /* libc++.tbd */,
-				31BF1DF11D0EF64B0023899B /* Jibber.framework */,
 				1D6A3F62206C80C37E59243F /* libPods-HirudoiPad.a */,
 			);
 			name = Frameworks;
@@ -188,6 +196,7 @@
 				31D4CDC51D0EECEE00E83F5E /* Resources */,
 				3D5EB651874221742F9F6701 /* 📦 Embed Pods Frameworks */,
 				9923DF30F4FF8348E6BC25A7 /* 📦 Copy Pods Resources */,
+				316337A21D1BB82300C93495 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -246,6 +255,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		316337A21D1BB82300C93495 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Fabric.framework/run 293cea63a6563fc503245378ace0292a918730e1 e27743e3891879b656422409233f0f6faa0d712a28948465a78d352e8e1b7c9a";
+		};
 		3D5EB651874221742F9F6701 /* 📦 Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -427,6 +449,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/HirudoiPad",
 				);
 				INFOPLIST_FILE = HirudoiPad/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -444,6 +467,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/HirudoiPad",
 				);
 				INFOPLIST_FILE = HirudoiPad/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
