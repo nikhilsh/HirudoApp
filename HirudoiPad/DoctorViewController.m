@@ -128,7 +128,7 @@
     [self.graph2 reloadData];
     [self.graph3 reloadData];
 
-    self.timer = [NSTimer scheduledTimerWithTimeInterval:10 target:self selector:@selector(fetchRealDataPoints) userInfo:nil repeats:YES];
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:4 target:self selector:@selector(fetchRealDataPoints) userInfo:nil repeats:YES];
 }
 
 - (void)setupGraphs {
@@ -144,7 +144,7 @@
     self.graph1.showYLegend = YES;
     self.graph1.useBackgroundGradient = YES;
     self.graph1.tintColor = [UIColor colorWithRed:0.3922 green:0.2089 blue:0.7482 alpha:1.0];
-    self.graph1.shouldSmooth = YES;
+    self.graph1.shouldSmooth = NO;
     self.graph1.showXLegendValues = YES;
     self.graph1.layer.cornerRadius = 8.0;
     self.graph1.clipsToBounds = YES;
@@ -160,7 +160,7 @@
     self.graph2.normalizeXValues = YES;
     self.graph2.useBackgroundGradient = YES;
     self.graph2.tintColor = [UIColor colorWithRed:0.1888 green:0.5065 blue:0.6895 alpha:1.0];
-    self.graph2.shouldSmooth = YES;
+    self.graph2.shouldSmooth = NO;
     self.graph2.showXLegendValues = YES;
     self.graph2.layer.cornerRadius = 8.0;
     self.graph2.clipsToBounds = YES;
@@ -176,7 +176,7 @@
     self.graph3.showYLegend = YES;
     self.graph3.useBackgroundGradient = YES;
     self.graph3.tintColor = [UIColor colorWithRed:1.0 green:0.2649 blue:0.155 alpha:1.0];
-    self.graph3.shouldSmooth = YES;
+    self.graph3.shouldSmooth = NO;
     self.graph3.showXLegendValues = YES;
     self.graph3.layer.cornerRadius = 8.0;
     self.graph3.clipsToBounds = YES;
@@ -186,7 +186,7 @@
 }
 
 - (void)setupLabels {
-    [self.countdownTimer setCountDownTime:10];
+    [self.countdownTimer setCountDownTime:20];
     self.countdownTimer.delegate = self;
     self.countdownTimer.timerType = MZTimerLabelTypeTimer;
     [self.countdownTimer start];
