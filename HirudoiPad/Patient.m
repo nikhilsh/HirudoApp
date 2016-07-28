@@ -18,7 +18,10 @@
         @"heartRate" : @"heartrate",
         @"bloodFlowRate" : @"flowrate",
         @"patientID" : @"pid",
-        @"date" : @"timestamp"
+        @"date" : @"timestamp",
+        @"name" : @"pname",
+        @"wardID" : @"wid",
+        @"gender" : @"pgender",
     };
 }
 
@@ -26,5 +29,8 @@
     return [NSValueTransformer valueTransformerForName:MCModelDateTimeValueTransformerName];
 }
 
++ (NSValueTransformer *)admittedDateJSONTransformer {
+    return [NSValueTransformer valueTransformerForName:MCModelDateTimeValueTransformerName];
+}
 
 @end

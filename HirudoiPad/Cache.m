@@ -12,11 +12,11 @@
 
 @interface Cache ()
 
-
 @end
 
 @implementation Cache
 
 @dynamic userID;
+@dynamic doctorName;
 
 @end

@@ -18,6 +18,8 @@ extern NSString *const ClientDidUpdateUserAccountNotification;
 
 + (instancetype)sharedInstance;
 
+- (void)retrievePatientList:(void (^)(NSError *error, NSArray *patients))completion;
+
 - (void)retrievePatients:(void (^)(NSError *error, NSArray *patients))completion;
 - (void)retrievePatientsWithDate:(NSDate *) date withCompletionHander:(void (^)(NSError *error, NSArray *patients))completion;
 

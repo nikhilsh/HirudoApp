@@ -11,5 +11,7 @@
 @interface Cache : MCDynamicCache
 
 @property (nonatomic, assign) int userID;
+@property (nonatomic, copy) NSString *doctorName;
+
 
 @end

@@ -10,4 +10,6 @@
 
 @interface DoctorViewController : UIViewController
 
+@property (assign, nonatomic) int pid;
+
 @end
