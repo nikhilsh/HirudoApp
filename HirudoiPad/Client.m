@@ -92,7 +92,7 @@ NSString *const ClientDidUpdateUserAccountNotification = @"ClientDidUpdateUserAc
     }];
 }
 
-- (void)registerDoctorWithUser:(NSString *)suser withPassword:(NSString *)spw withName:(NSString *)sname withRole:(NSString *)role withGender:(NSString *)sgender withTeamID:(int)teamuuid withWorkID:(int)workuuid withCompletionHander:(void (^)(NSError *error))completion {
+- (void)registerDoctorWithUser:(NSString *)suser withPassword:(NSString *)spw withName:(NSString *)sname withRole:(NSString *)role withGender:(NSString *)sgender withTeamID:(int)teamuuid withCompletionHander:(void (^)(NSError *error))completion {
     NSDictionary *params = @{
                              @"suser" : suser,
                              @"spw" : spw,
@@ -100,7 +100,6 @@ NSString *const ClientDidUpdateUserAccountNotification = @"ClientDidUpdateUserAc
                              @"srole" : role,
                              @"sgender" : sgender,
                              @"tid" : @(teamuuid),
-                             @"wid" : @(workuuid)
                              };
     [self POST:@"doctor/register" parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSString *userID = responseObject[@"sid"];
