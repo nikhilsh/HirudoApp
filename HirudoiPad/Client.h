@@ -20,8 +20,8 @@ extern NSString *const ClientDidUpdateUserAccountNotification;
 
 - (void)retrievePatientList:(void (^)(NSError *error, NSArray *patients))completion;
 
-- (void)retrievePatients:(void (^)(NSError *error, NSArray *patients))completion;
-- (void)retrievePatientsWithDate:(NSDate *) date withCompletionHander:(void (^)(NSError *error, NSArray *patients))completion;
+- (void)retrievePatientWithPatient:(int)patientID withCompletionHandler:(void (^)(NSError *error, NSArray *patients))completion;
+- (void)retrievePatientsWithDate:(NSDate *)date withPatientID:(int)patientID withCompletionHander:(void (^)(NSError *error, NSArray *patients))completion;
 
 //register doctor
 - (void)registerDoctorWithUser:(NSString *)suser withPassword:(NSString *)spw withName:(NSString *)sname withRole:(NSString *)role withGender:(NSString *)sgender withTeamID:(int)teamuuid withWorkID:(int)workuuid withCompletionHander:(void (^)(NSError *error))completion;

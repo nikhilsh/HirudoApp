@@ -45,9 +45,9 @@
 //    [self.navigationController.navigationBar setTitleTextAttributes:@{
 //                                                                      NSFontAttributeName:[UIFont fontWithName:@"AvenirNext-Medium" size:21]}];
 	self.patients = [NSMutableArray new];
-	[[Client sharedInstance] retrievePatients:^(NSError *error, NSArray *patients) {
-	         self.patients = [patients copy];
-	 }];
+//	[[Client sharedInstance] retrievePatients:^(NSError *error, NSArray *patients) {
+//	         self.patients = [patients copy];
+//	 }];
     
     UITapGestureRecognizer *gestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(createAlertSimulation)];
     gestureRecognizer.numberOfTapsRequired = 2;

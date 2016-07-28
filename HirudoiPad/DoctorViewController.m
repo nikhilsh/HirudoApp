@@ -64,7 +64,7 @@
     [self setupGraphs];
 
     if (!self.lastFetchedDate) {
-        [[Client sharedInstance] retrievePatients:^(NSError *error, NSArray *patients) {
+        [[Client sharedInstance] retrievePatientWithPatient:self.pid withCompletionHandler:^(NSError *error, NSArray *patients) {
             self.patients = [patients mutableCopy];
             Patient *patient = patients.lastObject;
             self.lastFetchedDate = patient.date;
@@ -73,7 +73,7 @@
         }];
     }
     else {
-        [[Client sharedInstance] retrievePatientsWithDate:self.lastFetchedDate withCompletionHander:^(NSError *error, NSArray *patients) {
+        [[Client sharedInstance] retrievePatientsWithDate:self.lastFetchedDate withPatientID:self.pid withCompletionHander:^(NSError *error, NSArray *patients) {
             [self.patients addObjectsFromArray:patients];
             [self useRealData];
         }];
@@ -218,7 +218,7 @@
 
 - (void)fetchRealDataPoints {
     __block Patient *patient = [[Patient alloc] init];
-    [[Client sharedInstance] retrievePatientsWithDate:self.lastFetchedDate withCompletionHander:^(NSError *error, NSArray *patients) {
+    [[Client sharedInstance] retrievePatientsWithDate:self.lastFetchedDate withPatientID:self.pid withCompletionHander:^(NSError *error, NSArray *patients) {
         [self.patients addObjectsFromArray:patients];
         for (int i = 0; i<patients.count; i++) {
             patient = patients[i];

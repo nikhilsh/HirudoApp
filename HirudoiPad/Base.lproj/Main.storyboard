@@ -63,7 +63,6 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="handleLoginButton:" destination="Tgi-Gu-0vV" eventType="touchUpInside" id="Sxs-qY-q3V"/>
-                                    <action selector="handleSignUpButton:" destination="Qw6-FH-oeh" eventType="touchUpInside" id="FH4-pf-prt"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fJt-Uw-yRt">
@@ -262,7 +261,7 @@
                                 <frame key="frameInset" minY="92" width="768" height="148"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="E8a-YZ-OUq" id="Tba-wf-q0n">
-                                    <frame key="frameInset" width="768" height="147"/>
+                                    <frame key="frameInset" width="768" height="147.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S4W-I4-Q1n">
