@@ -18,6 +18,7 @@
 		31BF1E011D0EF6F20023899B /* MCJSONRequestSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 31BF1DFB1D0EF6F20023899B /* MCJSONRequestSerializer.m */; };
 		31BF1E021D0EF6F20023899B /* MCJSONResponseSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 31BF1DFD1D0EF6F20023899B /* MCJSONResponseSerializer.m */; };
 		31BF1E031D0EF6F20023899B /* MCNetworkActivityLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 31BF1DFF1D0EF6F20023899B /* MCNetworkActivityLogger.m */; };
+		31CA1A911D4A449A00988F7A /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31CA1A901D4A449A00988F7A /* RegisterViewController.m */; };
 		31D4CDCC1D0EECEE00E83F5E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 31D4CDCB1D0EECEE00E83F5E /* main.m */; };
 		31D4CDCF1D0EECEE00E83F5E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 31D4CDCE1D0EECEE00E83F5E /* AppDelegate.m */; };
 		31D4CDD21D0EECEE00E83F5E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31D4CDD11D0EECEE00E83F5E /* ViewController.m */; };
@@ -47,6 +48,8 @@
 		31BF1DFD1D0EF6F20023899B /* MCJSONResponseSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCJSONResponseSerializer.m; sourceTree = "<group>"; };
 		31BF1DFE1D0EF6F20023899B /* MCNetworkActivityLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCNetworkActivityLogger.h; sourceTree = "<group>"; };
 		31BF1DFF1D0EF6F20023899B /* MCNetworkActivityLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCNetworkActivityLogger.m; sourceTree = "<group>"; };
+		31CA1A8F1D4A449A00988F7A /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
+		31CA1A901D4A449A00988F7A /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
 		31D4CDC71D0EECEE00E83F5E /* HirudoiPad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HirudoiPad.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		31D4CDCB1D0EECEE00E83F5E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		31D4CDCD1D0EECEE00E83F5E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -142,6 +145,8 @@
 				31D4CDCD1D0EECEE00E83F5E /* AppDelegate.h */,
 				31D4CDCE1D0EECEE00E83F5E /* AppDelegate.m */,
 				31D4CDD31D0EECEE00E83F5E /* Main.storyboard */,
+				31CA1A8F1D4A449A00988F7A /* RegisterViewController.h */,
+				31CA1A901D4A449A00988F7A /* RegisterViewController.m */,
 				311A15981D197AB9001AE5CD /* Doctor View */,
 				31D4CDD01D0EECEE00E83F5E /* ViewController.h */,
 				31D4CDD11D0EECEE00E83F5E /* ViewController.m */,
@@ -334,6 +339,7 @@
 				31DEAA171D182DAF000D4100 /* PatientListTableViewController.m in Sources */,
 				31BF1E011D0EF6F20023899B /* MCJSONRequestSerializer.m in Sources */,
 				31D4CDCC1D0EECEE00E83F5E /* main.m in Sources */,
+				31CA1A911D4A449A00988F7A /* RegisterViewController.m in Sources */,
 				311A15971D197894001AE5CD /* DoctorViewController.m in Sources */,
 				31BF1E001D0EF6F20023899B /* Client.m in Sources */,
 				31DEAA1A1D183AE9000D4100 /* PatientTableViewCell.m in Sources */,

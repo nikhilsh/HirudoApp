@@ -23,6 +23,7 @@
     [[MCAppRouter sharedInstance] mapRoute:@"patient/list" toViewControllerInStoryboardWithName:@"Main" withIdentifer:@"ViewController"];
     [[MCAppRouter sharedInstance] mapRoute:@"doctor" toViewControllerInStoryboardWithName:@"Main" withIdentifer:@"DoctorViewController"];
     [[MCAppRouter sharedInstance] mapRoute:@"extra" toViewControllerInStoryboardWithName:@"Main" withIdentifer:@"ExtraInformationViewController"];
+    [[MCAppRouter sharedInstance] mapRoute:@"register" toViewControllerInStoryboardWithName:@"Main" withIdentifer:@"RegisterViewController"];
     
 }
 

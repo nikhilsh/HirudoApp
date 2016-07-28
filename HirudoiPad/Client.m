@@ -75,4 +75,25 @@ NSString *const ClientDidUpdateUserAccountNotification = @"ClientDidUpdateUserAc
     }];
 }
 
+- (void)registerDoctorWithUser:(NSString *)suser withPassword:(NSString *)spw withName:(NSString *)sname withRole:(NSString *)role withGender:(NSString *)sgender withTeamID:(int)teamuuid withWorkID:(int)workuuid withCompletionHander:(void (^)(NSError *error, NSArray *patients))completion {
+    NSDictionary *params = @{
+                             @"suser" : suser,
+                             @"spw" : spw,
+                             @"sname" : sname,
+                             @"srole" : role,
+                             @"sgender" : sgender,
+                             @"tid" : @(teamuuid),
+                             @"wid" : @(workuuid)
+                             };
+    [self GET:@"doctor/register" parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSArray *patients = [Patient arrayOfModelFromJSONArray:responseObject[@"data"]];
+        if (completion) {
+            completion(nil, patients);
+        }
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        NSLog(@"error: %@", [error localizedDescription]);
+        completion(error, nil);
+    }];
+}
+
 @end

@@ -21,4 +21,7 @@ extern NSString *const ClientDidUpdateUserAccountNotification;
 - (void)retrievePatients:(void (^)(NSError *error, NSArray *patients))completion;
 - (void)retrievePatientsWithDate:(NSDate *) date withCompletionHander:(void (^)(NSError *error, NSArray *patients))completion;
 
+//register patients
+- (void)registerDoctorWithUser:(NSString *)suser withPassword:(NSString *)spw withName:(NSString *)sname withRole:(NSString *)role withGender:(NSString *)sgender withTeamID:(int)teamuuid withWorkID:(int)workuuid withCompletionHander:(void (^)(NSError *error, NSArray *patients))completion;
+
 @end

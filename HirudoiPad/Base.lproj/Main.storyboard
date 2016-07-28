@@ -7,6 +7,115 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Register View Controller-->
+        <scene sceneID="qLB-pw-e6H">
+            <objects>
+                <viewController storyboardIdentifier="RegisterViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Qw6-FH-oeh" customClass="RegisterViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ijd-2r-CVI"/>
+                        <viewControllerLayoutGuide type="bottom" id="Hu1-9b-Dql"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="SJ8-mc-RtF">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Username" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KRa-LX-Jyd">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="299" id="aDI-g0-LUs"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Password" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FUR-hH-Zgh">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="299" id="nWX-ha-DLi"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Name" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Wcq-WB-AG7">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="299" id="JYf-7v-GRJ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1y2-4b-CvL">
+                                <color key="backgroundColor" red="0.98039215686274506" green="0.10588235294117647" blue="0.18431372549019609" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="5gS-ma-vkq"/>
+                                    <constraint firstAttribute="width" constant="262" id="PML-7O-HRG"/>
+                                </constraints>
+                                <state key="normal" title="Sign up">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="6"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_meech" translatesAutoresizingMaskIntoConstraints="NO" id="C2n-kx-7Y4">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="162" id="Ctl-9v-MxP"/>
+                                    <constraint firstAttribute="width" constant="305" id="jeN-2Z-tLc"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Register User" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vOa-eZ-jHJ">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="158" id="Qvc-F6-Vw9"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="26"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="BI8-cx-lhy">
+                                <segments>
+                                    <segment title="Doctor"/>
+                                    <segment title="Nurse"/>
+                                </segments>
+                            </segmentedControl>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="AzB-FH-83m">
+                                <segments>
+                                    <segment title="Male"/>
+                                    <segment title="Female"/>
+                                </segments>
+                            </segmentedControl>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="AzB-FH-83m" firstAttribute="width" secondItem="BI8-cx-lhy" secondAttribute="width" id="08a-lI-lDg"/>
+                            <constraint firstItem="AzB-FH-83m" firstAttribute="top" secondItem="BI8-cx-lhy" secondAttribute="bottom" constant="15" id="3w2-mq-mLF"/>
+                            <constraint firstItem="Wcq-WB-AG7" firstAttribute="centerX" secondItem="FUR-hH-Zgh" secondAttribute="centerX" id="5Lo-GD-vap"/>
+                            <constraint firstItem="Wcq-WB-AG7" firstAttribute="top" secondItem="FUR-hH-Zgh" secondAttribute="bottom" constant="15" id="9Il-6Q-lvn"/>
+                            <constraint firstItem="C2n-kx-7Y4" firstAttribute="top" secondItem="ijd-2r-CVI" secondAttribute="bottom" constant="67" id="EfC-ru-3jj"/>
+                            <constraint firstItem="KRa-LX-Jyd" firstAttribute="centerX" secondItem="vOa-eZ-jHJ" secondAttribute="centerX" id="HkB-Av-HSx"/>
+                            <constraint firstItem="FUR-hH-Zgh" firstAttribute="top" secondItem="KRa-LX-Jyd" secondAttribute="bottom" constant="15" id="OnP-UZ-azu"/>
+                            <constraint firstItem="Hu1-9b-Dql" firstAttribute="top" secondItem="1y2-4b-CvL" secondAttribute="bottom" constant="266" id="TcV-QF-LDr"/>
+                            <constraint firstItem="C2n-kx-7Y4" firstAttribute="centerX" secondItem="SJ8-mc-RtF" secondAttribute="centerX" id="Vdm-j1-VJf"/>
+                            <constraint firstItem="FUR-hH-Zgh" firstAttribute="centerX" secondItem="KRa-LX-Jyd" secondAttribute="centerX" id="Vf7-TC-8tu"/>
+                            <constraint firstItem="BI8-cx-lhy" firstAttribute="top" secondItem="Wcq-WB-AG7" secondAttribute="bottom" constant="15" id="eYX-Cm-XrQ"/>
+                            <constraint firstItem="vOa-eZ-jHJ" firstAttribute="centerX" secondItem="C2n-kx-7Y4" secondAttribute="centerX" id="gQP-Hb-9lB"/>
+                            <constraint firstItem="1y2-4b-CvL" firstAttribute="centerX" secondItem="SJ8-mc-RtF" secondAttribute="centerX" id="jm7-il-QiM"/>
+                            <constraint firstItem="AzB-FH-83m" firstAttribute="centerX" secondItem="BI8-cx-lhy" secondAttribute="centerX" id="k3W-T4-162"/>
+                            <constraint firstItem="vOa-eZ-jHJ" firstAttribute="top" secondItem="C2n-kx-7Y4" secondAttribute="bottom" constant="37" id="mDP-nn-WUu"/>
+                            <constraint firstItem="BI8-cx-lhy" firstAttribute="centerX" secondItem="Wcq-WB-AG7" secondAttribute="centerX" id="mTt-Bm-mEv"/>
+                            <constraint firstItem="KRa-LX-Jyd" firstAttribute="top" secondItem="vOa-eZ-jHJ" secondAttribute="bottom" constant="56" id="twY-YS-tqe"/>
+                            <constraint firstItem="BI8-cx-lhy" firstAttribute="width" secondItem="Wcq-WB-AG7" secondAttribute="width" id="uuq-nJ-2aH"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="doctorNurseSegmentedControl" destination="BI8-cx-lhy" id="Und-RU-6RR"/>
+                        <outlet property="maleFemaleSegmentedControl" destination="AzB-FH-83m" id="n1v-Mj-ikd"/>
+                        <outlet property="nameTextField" destination="Wcq-WB-AG7" id="nHJ-Sy-2C5"/>
+                        <outlet property="passwordTextField" destination="FUR-hH-Zgh" id="JcE-h6-MgH"/>
+                        <outlet property="usernameTextField" destination="KRa-LX-Jyd" id="mff-G4-g7B"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0GG-GQ-nal" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1091" y="-277"/>
+        </scene>
         <!--Patient List Table View Controller-->
         <scene sceneID="F64-yx-0d4">
             <objects>
@@ -430,4 +539,7 @@
             <point key="canvasLocation" x="-497.65625" y="386.71875"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="logo_meech" width="1524" height="839"/>
+    </resources>
 </document>
