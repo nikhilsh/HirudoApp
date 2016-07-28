@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11129.15" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="00Q-ky-uQT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11129.15" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Tgi-Gu-0vV">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11103.10"/>
@@ -7,10 +7,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="IC8-RK-vM6">
             <objects>
-                <viewController id="Tgi-Gu-0vV" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Tgi-Gu-0vV" customClass="LoginViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hjP-er-J3l"/>
                         <viewControllerLayoutGuide type="bottom" id="vys-R6-Dbg"/>
@@ -62,7 +62,16 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
+                                    <action selector="handleLoginButton:" destination="Tgi-Gu-0vV" eventType="touchUpInside" id="Sxs-qY-q3V"/>
                                     <action selector="handleSignUpButton:" destination="Qw6-FH-oeh" eventType="touchUpInside" id="FH4-pf-prt"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fJt-Uw-yRt">
+                                <state key="normal" title="or register">
+                                    <color key="titleColor" red="0.98039215690000003" green="0.1058823529" blue="0.1843137255" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="handleRegisterButton:" destination="Tgi-Gu-0vV" eventType="touchUpInside" id="zPL-tc-3BD"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -72,14 +81,20 @@
                             <constraint firstItem="cS3-SD-0cY" firstAttribute="centerX" secondItem="Mc5-TL-uGq" secondAttribute="centerX" id="B1j-b8-tvj"/>
                             <constraint firstItem="cS3-SD-0cY" firstAttribute="top" secondItem="hjP-er-J3l" secondAttribute="bottom" constant="67" id="EnF-Hu-BQD"/>
                             <constraint firstItem="vys-R6-Dbg" firstAttribute="top" secondItem="Rpm-V8-abi" secondAttribute="bottom" constant="220" id="Fzj-yl-TpU"/>
+                            <constraint firstItem="fJt-Uw-yRt" firstAttribute="top" secondItem="Rpm-V8-abi" secondAttribute="bottom" constant="8" id="O1C-dB-ndl"/>
                             <constraint firstItem="kVZ-KY-GdA" firstAttribute="top" secondItem="QTm-83-ZFj" secondAttribute="bottom" constant="84" id="SIo-YE-Tq1"/>
                             <constraint firstItem="Cel-3b-tcm" firstAttribute="top" secondItem="kVZ-KY-GdA" secondAttribute="bottom" constant="23" id="Vya-Ib-eUl"/>
                             <constraint firstItem="QTm-83-ZFj" firstAttribute="centerX" secondItem="cS3-SD-0cY" secondAttribute="centerX" id="bfu-hY-D36"/>
                             <constraint firstItem="Rpm-V8-abi" firstAttribute="centerX" secondItem="Mc5-TL-uGq" secondAttribute="centerX" id="fjR-zb-wbW"/>
+                            <constraint firstItem="fJt-Uw-yRt" firstAttribute="centerX" secondItem="Rpm-V8-abi" secondAttribute="centerX" id="mow-r2-Dqk"/>
                             <constraint firstItem="QTm-83-ZFj" firstAttribute="top" secondItem="cS3-SD-0cY" secondAttribute="bottom" constant="68" id="pDl-Kr-eKG"/>
                             <constraint firstItem="Cel-3b-tcm" firstAttribute="centerX" secondItem="kVZ-KY-GdA" secondAttribute="centerX" id="v3G-Gw-QY3"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="passwordTextField" destination="Cel-3b-tcm" id="7aD-de-g2H"/>
+                        <outlet property="usernameTextField" destination="kVZ-KY-GdA" id="n0g-mG-JvM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YXs-dr-th0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -178,6 +193,14 @@
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="28N-vt-zJC">
+                                <state key="normal" title="or login">
+                                    <color key="titleColor" red="0.98039215690000003" green="0.1058823529" blue="0.1843137255" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="handleLoginButton:" destination="Qw6-FH-oeh" eventType="touchUpInside" id="MDN-Nj-sxK"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -186,6 +209,7 @@
                             <constraint firstItem="Wcq-WB-AG7" firstAttribute="centerX" secondItem="FUR-hH-Zgh" secondAttribute="centerX" id="5Lo-GD-vap"/>
                             <constraint firstItem="Wcq-WB-AG7" firstAttribute="top" secondItem="FUR-hH-Zgh" secondAttribute="bottom" constant="15" id="9Il-6Q-lvn"/>
                             <constraint firstItem="C2n-kx-7Y4" firstAttribute="top" secondItem="ijd-2r-CVI" secondAttribute="bottom" constant="67" id="EfC-ru-3jj"/>
+                            <constraint firstItem="28N-vt-zJC" firstAttribute="top" secondItem="1y2-4b-CvL" secondAttribute="bottom" constant="8" id="FkJ-UJ-X9j"/>
                             <constraint firstItem="KRa-LX-Jyd" firstAttribute="centerX" secondItem="vOa-eZ-jHJ" secondAttribute="centerX" id="HkB-Av-HSx"/>
                             <constraint firstItem="FUR-hH-Zgh" firstAttribute="top" secondItem="KRa-LX-Jyd" secondAttribute="bottom" constant="15" id="OnP-UZ-azu"/>
                             <constraint firstItem="nJM-Yd-PwR" firstAttribute="centerX" secondItem="H8m-hH-2hg" secondAttribute="centerX" id="QhZ-Wk-XIC"/>
@@ -203,6 +227,7 @@
                             <constraint firstItem="nJM-Yd-PwR" firstAttribute="top" secondItem="H8m-hH-2hg" secondAttribute="bottom" constant="15" id="nfn-eK-fhL"/>
                             <constraint firstItem="KRa-LX-Jyd" firstAttribute="top" secondItem="vOa-eZ-jHJ" secondAttribute="bottom" constant="56" id="twY-YS-tqe"/>
                             <constraint firstItem="BI8-cx-lhy" firstAttribute="width" secondItem="Wcq-WB-AG7" secondAttribute="width" id="uuq-nJ-2aH"/>
+                            <constraint firstItem="28N-vt-zJC" firstAttribute="centerX" secondItem="1y2-4b-CvL" secondAttribute="centerX" id="wZz-Mh-GBi"/>
                         </constraints>
                     </view>
                     <connections>
@@ -626,7 +651,7 @@
         <!--Navigation Controller-->
         <scene sceneID="3en-bo-9f0">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="00Q-ky-uQT" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="PatientListNavTableViewController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="00Q-ky-uQT" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="reE-wV-lu4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>

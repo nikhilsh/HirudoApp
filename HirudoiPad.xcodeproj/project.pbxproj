@@ -12,6 +12,8 @@
 		316337A51D1BB85700C93495 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 316337A31D1BB85700C93495 /* Fabric.framework */; };
 		316337A61D1BB85800C93495 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 316337A41D1BB85700C93495 /* Crashlytics.framework */; };
 		316337AC1D1BBB7E00C93495 /* Jibber.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 316337AB1D1BBB7E00C93495 /* Jibber.framework */; };
+		318F4E201D4A50D400098600 /* Cache.m in Sources */ = {isa = PBXBuildFile; fileRef = 318F4E1F1D4A50D400098600 /* Cache.m */; };
+		31B9E91B1D4A503500BB2FFB /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31B9E91A1D4A503500BB2FFB /* LoginViewController.m */; };
 		31BF1DF41D0EF6B80023899B /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 31BF1DF31D0EF6B80023899B /* libc++.tbd */; };
 		31BF1DF71D0EF6E30023899B /* Patient.m in Sources */ = {isa = PBXBuildFile; fileRef = 31BF1DF61D0EF6E30023899B /* Patient.m */; };
 		31BF1E001D0EF6F20023899B /* Client.m in Sources */ = {isa = PBXBuildFile; fileRef = 31BF1DF91D0EF6F20023899B /* Client.m */; };
@@ -37,6 +39,10 @@
 		316337A31D1BB85700C93495 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		316337A41D1BB85700C93495 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		316337AB1D1BBB7E00C93495 /* Jibber.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Jibber.framework; sourceTree = "<group>"; };
+		318F4E1E1D4A50D400098600 /* Cache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cache.h; sourceTree = "<group>"; };
+		318F4E1F1D4A50D400098600 /* Cache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cache.m; sourceTree = "<group>"; };
+		31B9E9191D4A503500BB2FFB /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		31B9E91A1D4A503500BB2FFB /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		31BF1DF31D0EF6B80023899B /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		31BF1DF51D0EF6E30023899B /* Patient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Patient.h; sourceTree = "<group>"; };
 		31BF1DF61D0EF6E30023899B /* Patient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Patient.m; sourceTree = "<group>"; };
@@ -102,6 +108,8 @@
 			children = (
 				31BF1DF81D0EF6F20023899B /* Client.h */,
 				31BF1DF91D0EF6F20023899B /* Client.m */,
+				318F4E1E1D4A50D400098600 /* Cache.h */,
+				318F4E1F1D4A50D400098600 /* Cache.m */,
 				31BF1DFA1D0EF6F20023899B /* MCJSONRequestSerializer.h */,
 				31BF1DFB1D0EF6F20023899B /* MCJSONRequestSerializer.m */,
 				31BF1DFC1D0EF6F20023899B /* MCJSONResponseSerializer.h */,
@@ -145,6 +153,8 @@
 				31D4CDCD1D0EECEE00E83F5E /* AppDelegate.h */,
 				31D4CDCE1D0EECEE00E83F5E /* AppDelegate.m */,
 				31D4CDD31D0EECEE00E83F5E /* Main.storyboard */,
+				31B9E9191D4A503500BB2FFB /* LoginViewController.h */,
+				31B9E91A1D4A503500BB2FFB /* LoginViewController.m */,
 				31CA1A8F1D4A449A00988F7A /* RegisterViewController.h */,
 				31CA1A901D4A449A00988F7A /* RegisterViewController.m */,
 				311A15981D197AB9001AE5CD /* Doctor View */,
@@ -334,6 +344,7 @@
 				31BF1E021D0EF6F20023899B /* MCJSONResponseSerializer.m in Sources */,
 				31BF1DF71D0EF6E30023899B /* Patient.m in Sources */,
 				31BF1E031D0EF6F20023899B /* MCNetworkActivityLogger.m in Sources */,
+				31B9E91B1D4A503500BB2FFB /* LoginViewController.m in Sources */,
 				31FF86B71D1C5914006BCD97 /* ExtraInformationViewController.m in Sources */,
 				31D4CDCF1D0EECEE00E83F5E /* AppDelegate.m in Sources */,
 				31DEAA171D182DAF000D4100 /* PatientListTableViewController.m in Sources */,
@@ -341,6 +352,7 @@
 				31D4CDCC1D0EECEE00E83F5E /* main.m in Sources */,
 				31CA1A911D4A449A00988F7A /* RegisterViewController.m in Sources */,
 				311A15971D197894001AE5CD /* DoctorViewController.m in Sources */,
+				318F4E201D4A50D400098600 /* Cache.m in Sources */,
 				31BF1E001D0EF6F20023899B /* Client.m in Sources */,
 				31DEAA1A1D183AE9000D4100 /* PatientTableViewCell.m in Sources */,
 			);

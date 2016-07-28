@@ -7,6 +7,7 @@
 //
 
 #import "Client.h"
+#import "Cache.h"
 
 static NSString *const kAPIBaseUrl = @"http://hirudo-dev.ap-southeast-1.elasticbeanstalk.com";
 static NSString *const kAPIVersionHeader = @"X-Api-Version";
@@ -42,7 +43,7 @@ NSString *const ClientDidUpdateUserAccountNotification = @"ClientDidUpdateUserAc
 
 - (void)retrievePatients:(void (^)(NSError *error, NSArray *patients))completion {
     NSDictionary *params = @{
-                             @"uid" : @(1)
+                             @"uid" : @([Cache sharedInstance].userID)
                              };
     [self GET:@"doctor/data" parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSArray *patients = [Patient arrayOfModelFromJSONArray:responseObject[@"data"]];
@@ -62,7 +63,7 @@ NSString *const ClientDidUpdateUserAccountNotification = @"ClientDidUpdateUserAc
     
     NSDictionary *params = @{
                              @"last" : dateString,
-                             @"uid" : @(1)
+                             @"uid" : @([Cache sharedInstance].userID)
                              };
     [self GET:@"doctor/datatime" parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSArray *patients = [Patient arrayOfModelFromJSONArray:responseObject[@"data"]];
@@ -75,7 +76,7 @@ NSString *const ClientDidUpdateUserAccountNotification = @"ClientDidUpdateUserAc
     }];
 }
 
-- (void)registerDoctorWithUser:(NSString *)suser withPassword:(NSString *)spw withName:(NSString *)sname withRole:(NSString *)role withGender:(NSString *)sgender withTeamID:(int)teamuuid withWorkID:(int)workuuid withCompletionHander:(void (^)(NSError *error, NSArray *patients))completion {
+- (void)registerDoctorWithUser:(NSString *)suser withPassword:(NSString *)spw withName:(NSString *)sname withRole:(NSString *)role withGender:(NSString *)sgender withTeamID:(int)teamuuid withWorkID:(int)workuuid withCompletionHander:(void (^)(NSError *error))completion {
     NSDictionary *params = @{
                              @"suser" : suser,
                              @"spw" : spw,
@@ -85,10 +86,27 @@ NSString *const ClientDidUpdateUserAccountNotification = @"ClientDidUpdateUserAc
                              @"tid" : @(teamuuid),
                              @"wid" : @(workuuid)
                              };
-    [self GET:@"doctor/register" parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        NSArray *patients = [Patient arrayOfModelFromJSONArray:responseObject[@"data"]];
+    [self POST:@"doctor/register" parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSString *userID = responseObject[@"sid"];
+        [Cache sharedInstance].userID = [userID intValue];
         if (completion) {
-            completion(nil, patients);
+            completion(nil);
+        }
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        NSLog(@"error: %@", [error localizedDescription]);
+        completion(error);
+    }];
+}
+
+- (void)loginDoctorWithUser:(NSString *)suser withPassword:(NSString *)spw withCompletionHander:(void (^)(NSError *error, NSString *userID))completion {
+    NSDictionary *params = @{
+                             @"suser" : suser,
+                             @"spw" : spw
+                             };
+    [self GET:@"doctor/login" parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSString *userID = responseObject[@"sid"];
+        if (completion) {
+            completion(nil, userID);
         }
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         NSLog(@"error: %@", [error localizedDescription]);

@@ -8,6 +8,7 @@
 
 #import "RegisterViewController.h"
 #import "Client.h"
+#import <MCAppRouter.h>
 
 @interface RegisterViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *usernameTextField;
@@ -51,9 +52,20 @@
         gender = @"f";
     }
     
-    [[Client sharedInstance] registerDoctorWithUser:self.usernameTextField.text withPassword:self.passwordTextField.text withName:self.nameTextField.text withRole:role withGender:gender withTeamID:[self.teamIDTextField.text intValue] withWorkID:[self.workIDTextField.text intValue] withCompletionHander:^(NSError *error, NSArray *patients) {
-        NSLog(@"signed up");
+    [[Client sharedInstance] registerDoctorWithUser:self.usernameTextField.text withPassword:self.passwordTextField.text withName:self.nameTextField.text withRole:role withGender:gender withTeamID:[self.teamIDTextField.text intValue] withWorkID:[self.workIDTextField.text intValue] withCompletionHander:^(NSError *error) {
+        UIViewController *controller = [[MCAppRouter sharedInstance] viewControllerMatchingRoute:@"patient/list/nav"];
+        [UIView transitionWithView:[[self view] window] duration:[[self view] window].rootViewController != nil ? 0.4 : 0 options:UIViewAnimationOptionTransitionFlipFromLeft animations: ^{
+            [[self view] window].rootViewController = controller;
+        } completion:nil];
     }];
 }
+
+- (IBAction)handleLoginButton:(id)sender {
+    UIViewController *controller = [[MCAppRouter sharedInstance] viewControllerMatchingRoute:@"login"];
+    [UIView transitionWithView:[[self view] window] duration:[[self view] window].rootViewController != nil ? 0.4 : 0 options:UIViewAnimationOptionTransitionFlipFromLeft animations: ^{
+        [[self view] window].rootViewController = controller;
+    } completion:nil];
+}
+
 
 @end
