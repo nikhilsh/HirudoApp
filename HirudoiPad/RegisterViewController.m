@@ -15,6 +15,8 @@
 @property (weak, nonatomic) IBOutlet UITextField *nameTextField;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *doctorNurseSegmentedControl;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *maleFemaleSegmentedControl;
+@property (weak, nonatomic) IBOutlet UITextField *teamIDTextField;
+@property (weak, nonatomic) IBOutlet UITextField *workIDTextField;
 
 @end
 
@@ -49,7 +51,7 @@
         gender = @"f";
     }
     
-    [[Client sharedInstance] registerDoctorWithUser:self.usernameTextField.text withPassword:self.passwordTextField.text withName:self.nameTextField.text withRole:role withGender:gender withTeamID:2 withWorkID:2 withCompletionHander:^(NSError *error, NSArray *patients) {
+    [[Client sharedInstance] registerDoctorWithUser:self.usernameTextField.text withPassword:self.passwordTextField.text withName:self.nameTextField.text withRole:role withGender:gender withTeamID:[self.teamIDTextField.text intValue] withWorkID:[self.workIDTextField.text intValue] withCompletionHander:^(NSError *error, NSArray *patients) {
         NSLog(@"signed up");
     }];
 }
