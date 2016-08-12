@@ -8,6 +8,7 @@
 
 #import "RegisterViewController.h"
 #import "Client.h"
+#import "Cache.h"
 #import <MCAppRouter.h>
 
 @interface RegisterViewController ()
@@ -52,10 +53,18 @@
     }
     
     [[Client sharedInstance] registerDoctorWithUser:self.usernameTextField.text withPassword:self.passwordTextField.text withName:self.nameTextField.text withRole:role withGender:gender withTeamID:[self.teamIDTextField.text intValue] withCompletionHander:^(NSError *error) {
-        UIViewController *controller = [[MCAppRouter sharedInstance] viewControllerMatchingRoute:@"patient/list/nav"];
-        [UIView transitionWithView:[[self view] window] duration:[[self view] window].rootViewController != nil ? 0.4 : 0 options:UIViewAnimationOptionTransitionFlipFromLeft animations: ^{
-            [[self view] window].rootViewController = controller;
-        } completion:nil];
+        if (!error) {
+            [[Client sharedInstance] loginDoctorWithUser:self.usernameTextField.text withPassword:self.passwordTextField.text withCompletionHander:^(NSError *error, NSString *userID) {
+                if (!error) {
+                    [Cache sharedInstance].userID = [userID intValue];
+                    UIViewController *controller = [[MCAppRouter sharedInstance] viewControllerMatchingRoute:@"patient/list/nav"];
+                    [UIView transitionWithView:[[self view] window] duration:[[self view] window].rootViewController != nil ? 0.4 : 0 options:UIViewAnimationOptionTransitionFlipFromLeft animations: ^{
+                        [[self view] window].rootViewController = controller;
+                    } completion:nil];
+                    
+                }
+            }];
+        }
     }];
 }
 

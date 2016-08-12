@@ -53,7 +53,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    self.title = @"Francisco Furtado";
+    self.title = self.titleOfPatient;
     [self.navigationController.navigationBar setTitleTextAttributes:@{
                                                                       NSFontAttributeName:[UIFont fontWithName:@"AvenirNext-Medium" size:21]}];
     

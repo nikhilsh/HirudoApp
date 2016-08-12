@@ -17,7 +17,7 @@
 @property (strong, nonatomic) NSDate *date;
 @property (assign, nonatomic) int wardID;
 @property (copy, nonatomic) NSString *gender;
-@property (strong, nonatomic) NSDate *admittedDate;
+@property (copy, nonatomic) NSString *admittedDate;
 @property (copy, nonatomic) NSString *name;
 
 @end

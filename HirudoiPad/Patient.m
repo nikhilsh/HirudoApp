@@ -29,8 +29,5 @@
     return [NSValueTransformer valueTransformerForName:MCModelDateTimeValueTransformerName];
 }
 
-+ (NSValueTransformer *)admittedDateJSONTransformer {
-    return [NSValueTransformer valueTransformerForName:MCModelDateTimeValueTransformerName];
-}
 
 @end

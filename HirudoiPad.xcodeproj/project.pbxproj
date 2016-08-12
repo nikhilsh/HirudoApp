@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2A8F0D0B3B679AC789688D6C /* libPods-HirudoiPad.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D6A3F62206C80C37E59243F /* libPods-HirudoiPad.a */; };
+		3101EC5F1D4A86AE00BC208F /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3101EC5E1D4A86AE00BC208F /* SafariServices.framework */; };
 		311A15971D197894001AE5CD /* DoctorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 311A15961D197894001AE5CD /* DoctorViewController.m */; };
 		316337A51D1BB85700C93495 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 316337A31D1BB85700C93495 /* Fabric.framework */; };
 		316337A61D1BB85800C93495 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 316337A41D1BB85700C93495 /* Crashlytics.framework */; };
@@ -34,6 +35,7 @@
 
 /* Begin PBXFileReference section */
 		1D6A3F62206C80C37E59243F /* libPods-HirudoiPad.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HirudoiPad.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3101EC5E1D4A86AE00BC208F /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
 		311A15951D197894001AE5CD /* DoctorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoctorViewController.h; sourceTree = "<group>"; };
 		311A15961D197894001AE5CD /* DoctorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoctorViewController.m; sourceTree = "<group>"; };
 		316337A31D1BB85700C93495 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
@@ -81,6 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3101EC5F1D4A86AE00BC208F /* SafariServices.framework in Frameworks */,
 				31BF1DF41D0EF6B80023899B /* libc++.tbd in Frameworks */,
 				316337AC1D1BBB7E00C93495 /* Jibber.framework in Frameworks */,
 				316337A61D1BB85800C93495 /* Crashlytics.framework in Frameworks */,
@@ -188,6 +191,7 @@
 		55ABF63333A3B441E4FB5EBB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3101EC5E1D4A86AE00BC208F /* SafariServices.framework */,
 				31BF1DF31D0EF6B80023899B /* libc++.tbd */,
 				1D6A3F62206C80C37E59243F /* libPods-HirudoiPad.a */,
 			);

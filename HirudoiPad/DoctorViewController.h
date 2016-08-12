@@ -11,5 +11,6 @@
 @interface DoctorViewController : UIViewController
 
 @property (assign, nonatomic) int pid;
+@property (copy, nonatomic) NSString *titleOfPatient;
 
 @end

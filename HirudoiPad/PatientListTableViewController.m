@@ -52,7 +52,16 @@
     PatientTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PatientCell" forIndexPath:indexPath];
     Patient *patient = self.patientListArray[indexPath.row];
     cell.patientNameLabel.text = patient.name;
-    cell.patientDetailsLabel.text = [NSString stringWithFormat:@"Gender: %@\nAdmitted Date: %@\nWard: %i", [patient.gender isEqualToString:@"m"] ? @"Male" : @"Female" , patient.admittedDate, patient.wardID];
+    
+    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+    [dateFormat setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"];
+    
+    NSDate *date = [dateFormat dateFromString:patient.admittedDate];
+    NSDateFormatter *newDateFormatter = [[NSDateFormatter alloc]init];
+    [newDateFormatter setDateFormat:@"d/MM/yyyy"];
+    NSString *newString = [newDateFormatter stringFromDate:date];
+    
+    cell.patientDetailsLabel.text = [NSString stringWithFormat:@"Gender: %@\nAdmitted Date: %@\nWard: %i", [[patient.gender lowercaseString] isEqualToString:@"m"] ? @"Male" : @"Female" , newString, patient.wardID];
 //    if (indexPath.row == 0) {
 //        cell.patientNameLabel.text = @"Jermaine Cheng";
 //        cell.patientDetailsLabel.text = [NSString stringWithFormat:@"%@\n%@\n%@", @"Gender: Male", @"Admitted Date: 2016-06-07", @"Ward: 1A"];
@@ -70,6 +79,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     DoctorViewController *controller = [[MCAppRouter sharedInstance] viewControllerMatchingRoute:@"doctor"];
     Patient *patient = self.patientListArray[indexPath.row];
+    controller.titleOfPatient = patient.name;
     controller.pid = [patient.patientID intValue];
     [self.navigationController pushViewController:controller animated:YES];
 }

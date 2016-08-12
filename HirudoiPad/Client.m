@@ -101,9 +101,8 @@ NSString *const ClientDidUpdateUserAccountNotification = @"ClientDidUpdateUserAc
                              @"sgender" : sgender,
                              @"tid" : @(teamuuid),
                              };
+
     [self POST:@"doctor/register" parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        NSString *userID = responseObject[@"sid"];
-        [Cache sharedInstance].userID = [userID intValue];
         if (completion) {
             completion(nil);
         }
@@ -118,8 +117,12 @@ NSString *const ClientDidUpdateUserAccountNotification = @"ClientDidUpdateUserAc
                              @"suser" : suser,
                              @"spw" : spw
                              };
+
     [self GET:@"doctor/login" parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        NSString *userID = responseObject[@"sid"];
+        NSString *userID = [[NSString alloc] init];
+        NSArray *object = responseObject;
+        userID = [NSString stringWithFormat:@"%@", [object firstObject][@"sid"]];
+        
         if (completion) {
             completion(nil, userID);
         }
